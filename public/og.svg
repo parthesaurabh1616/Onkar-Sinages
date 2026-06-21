@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#15120E"/>
+      <stop offset="100%" stop-color="#211C16"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF7A45"/>
+      <stop offset="100%" stop-color="#FF5A1E"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="20%" cy="10%" r="70%">
+      <stop offset="0%" stop-color="#FF5A1E" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FF5A1E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g stroke="#94A3B8" stroke-opacity="0.06">
+    <line x1="0" y1="157" x2="1200" y2="157"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="472" x2="1200" y2="472"/>
+  </g>
+  <g transform="translate(80 90)">
+    <rect width="64" height="64" rx="18" fill="#211C16"/>
+    <path d="M18 46V20h9c5.5 0 9 3 9 8 0 3.7-2 6.4-5.4 7.4L44 46" fill="none" stroke="url(#acc)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="22" r="4" fill="#FF7A45"/>
+    <text x="84" y="42" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">Onkar Signages</text>
+  </g>
+  <text x="80" y="300" font-family="Arial, sans-serif" font-size="68" font-weight="800" fill="#FFFFFF">Advertising</text>
+  <text x="80" y="378" font-family="Arial, sans-serif" font-size="68" font-weight="800" fill="url(#acc)">Infrastructure Partner</text>
+  <text x="80" y="444" font-family="Arial, sans-serif" font-size="28" fill="#94A3B8">Supply · Printing · Branding · Signage · Outdoor · Installation</text>
+  <g transform="translate(80 508)" font-family="Arial, sans-serif" font-size="24" fill="#FF7A45" font-weight="600">
+    <text x="0" y="0">Everything Under One Roof</text>
+    <text x="430" y="0">Across Maharashtra</text>
+  </g>
+</svg>

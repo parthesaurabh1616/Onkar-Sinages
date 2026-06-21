@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background-color: #15120e;
+  color: #f7f3ea;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(255, 90, 30, 0.35);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #15120e;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2820;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5a1e;
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-container px-5 sm:px-8 lg:px-10;
+  }
+
+  /* Section tone wrappers */
+  .section-dark {
+    @apply bg-primary text-ink;
+  }
+  .section-paper {
+    @apply bg-paper text-paper-ink;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-accent;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-orange-hover hover:shadow-glow focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary;
+  }
+
+  /* Ghost button for dark sections */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur transition-all duration-300 hover:border-accent/60 hover:bg-white/10;
+  }
+
+  /* Outline button for paper sections */
+  .btn-outline-ink {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-paper-ink/20 bg-transparent px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-paper-ink transition-all duration-300 hover:border-accent hover:text-accent;
+  }
+
+  .card-surface {
+    @apply rounded-3xl border border-white/10 bg-surface-raised/70 backdrop-blur-xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-br from-white via-ink to-highlight bg-clip-text text-transparent;
+  }
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-highlight to-accent bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Printer's halftone dot field (replaces the old tech grid) */
+  .halftone {
+    background-image: radial-gradient(
+      rgba(169, 160, 146, 0.18) 1.1px,
+      transparent 1.2px
+    );
+    background-size: 14px 14px;
+  }
+  .halftone-ink {
+    background-image: radial-gradient(
+      rgba(26, 22, 18, 0.12) 1.1px,
+      transparent 1.2px
+    );
+    background-size: 14px 14px;
+  }
+  /* legacy aliases so any leftover usages stay on-brand */
+  .grid-bg {
+    background-image: radial-gradient(
+      rgba(169, 160, 146, 0.14) 1.1px,
+      transparent 1.2px
+    );
+    background-size: 16px 16px;
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+
+  /* CMYK registration-mark accent line */
+  .cmyk-rule {
+    background: linear-gradient(
+      to right,
+      #00a6e0 0 25%,
+      #ec008c 25% 50%,
+      #ffd400 50% 75%,
+      #111111 75% 100%
+    );
+  }
+}
+
+/* Ensure marquee keyframe exists for inline-animated rows */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
