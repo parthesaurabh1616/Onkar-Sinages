@@ -32,16 +32,22 @@
 
 ### In GoDaddy
 1. Go to **godaddy.com → My Products → Domains → onkarsinages.com → DNS / Manage DNS**.
-2. **Delete** GoDaddy's default parking records (the `@` **A** record pointing to a parking IP, and any conflicting `www` CNAME). Do **not** use GoDaddy "Forwarding".
-3. Add these two records:
+2. **Delete every conflicting `@` record**, especially the **`A` · `@` · "WebsiteBuilder Site"** row
+   (it resolves to GoDaddy IPs `13.248.243.5` / `76.223.105.230` and breaks the apex).
+   If it won't delete / keeps returning, disconnect the site in **GoDaddy → Websites + Marketing** first.
+   Do **not** use GoDaddy "Forwarding".
+3. Use exactly the records Vercel shows (current values):
 
-   | Type  | Name (Host) | Value                  | TTL     |
-   |-------|-------------|------------------------|---------|
-   | A     | `@`         | `76.76.21.21`          | default |
-   | CNAME | `www`       | `cname.vercel-dns.com` | default |
+   | Type  | Name (Host) | Value                                  |
+   |-------|-------------|----------------------------------------|
+   | A     | `@`         | `216.198.79.1`                         |
+   | CNAME | `www`       | (the `*.vercel-dns-*.com` value Vercel gives, e.g. `caca5d83f9371a6e.vercel-dns-017.com`) |
 
-4. Save. Go back to Vercel → it verifies the domain and **auto-issues the SSL certificate**.
-5. Set **`onkarsinages.com`** as the primary domain (Vercel redirects `www` → apex).
+   > The apex `@` must have **only one** A record (`216.198.79.1`). Any extra A record on `@`
+   > (Website Builder / parking) must be removed or the site loads intermittently.
+
+4. Save → Vercel → Domains → **Refresh**. It verifies and **auto-issues SSL**.
+5. Optionally set **`onkarsinages.com`** as the primary domain (Vercel redirects `www` → apex).
 
 Propagation: usually a few minutes, up to ~1 hour.
 
