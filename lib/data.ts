@@ -360,7 +360,7 @@ export const SERVICES: Service[] = [
     name: "Installation Services",
     tagline: "Trained crews that execute on site.",
     icon: "tools",
-    image: "/images/work/wall-decals.jpg",
+    image: "/images/services/installation.jpg",
     items: ["Flex Installation", "Vinyl Application", "Hoarding Mounting", "Branding Execution", "Event Installation"],
   },
   {
