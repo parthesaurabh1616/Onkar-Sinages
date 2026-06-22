@@ -1,15 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * Drop-in image slot.
- * Renders a branded placeholder immediately, then loads the real photo
- * from `src` on top of it. If the file doesn't exist yet (404) the
- * placeholder simply stays visible — so you can add the real photo to
- * /public<src> later with ZERO code changes.
+ * Robust image slot.
+ *
+ * Renders a branded placeholder behind the real photo. The photo fades in
+ * once loaded; if the file is missing (404) the placeholder stays.
+ *
+ * IMPORTANT: a cached image can fire its `load` event BEFORE React attaches
+ * the onLoad handler (during hydration), which would otherwise leave the
+ * image stuck invisible after a refresh. We guard against that by checking
+ * `img.complete` on mount — the standard fix for the cached-image problem.
  */
+type Status = "loading" | "loaded" | "error";
+
 export function Media({
   src,
   alt,
@@ -24,43 +30,56 @@ export function Media({
   alt: string;
   className?: string;
   imgClassName?: string;
-  /** Branded fallback shown until the real photo loads */
   placeholder?: React.ReactNode;
-  /** Small dev hint of the expected file path */
   caption?: string;
   priority?: boolean;
   overlay?: boolean;
 }) {
-  const [loaded, setLoaded] = useState(false);
-  const [failed, setFailed] = useState(false);
+  const [status, setStatus] = useState<Status>("loading");
+  const ref = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    setStatus("loading");
+    const img = ref.current;
+    if (!img) return;
+    // If the browser already finished with this src (cache) before the
+    // onLoad/onError handlers were wired up, resolve the status now.
+    if (img.complete) {
+      setStatus(img.naturalWidth > 0 ? "loaded" : "error");
+    }
+  }, [src]);
 
   return (
     <div className={cn("relative overflow-hidden bg-surface", className)}>
-      {/* Branded placeholder layer */}
+      {/* Branded placeholder — always behind the photo */}
       <div
         className={cn(
           "absolute inset-0 transition-opacity duration-500",
-          loaded && !failed ? "opacity-0" : "opacity-100"
+          status === "loaded" ? "opacity-0" : "opacity-100"
         )}
       >
         {placeholder ?? <DefaultPlaceholder caption={caption ?? src} />}
       </div>
 
-      {/* Real photo layer */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={src}
-        alt={alt}
-        loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : "auto"}
-        onLoad={() => setLoaded(true)}
-        onError={() => setFailed(true)}
-        className={cn(
-          "absolute inset-0 h-full w-full object-cover transition-opacity duration-700",
-          loaded && !failed ? "opacity-100" : "opacity-0",
-          imgClassName
-        )}
-      />
+      {/* Real photo — removed entirely if it 404s so the placeholder shows */}
+      {status !== "error" && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          ref={ref}
+          src={src}
+          alt={alt}
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
+          fetchPriority={priority ? "high" : "auto"}
+          onLoad={() => setStatus("loaded")}
+          onError={() => setStatus("error")}
+          className={cn(
+            "absolute inset-0 h-full w-full object-cover transition-opacity duration-500",
+            status === "loaded" ? "opacity-100" : "opacity-0",
+            imgClassName
+          )}
+        />
+      )}
 
       {overlay && (
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/25 to-transparent" />
