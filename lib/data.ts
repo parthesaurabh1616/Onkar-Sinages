@@ -52,7 +52,6 @@ export const PRODUCTS: Product[] = [
     weatherResistance: "4–6 years outdoor",
     inStock: true,
     gsm: "440–570 GSM",
-    image: "/images/products/backlit-flex.webp",
     accentFrom: "#60A5FA",
     accentTo: "#2563EB",
     specs: [
