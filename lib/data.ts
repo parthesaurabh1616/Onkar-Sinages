@@ -320,7 +320,7 @@ export const SERVICES: Service[] = [
     name: "Advertising Materials",
     tagline: "Bulk supply of every print & signage substrate.",
     icon: "boxes",
-    image: "/images/facility/warehouse.jpg",
+    image: "/images/services/materials.jpg",
     items: ["Flex Rolls", "Vinyl", "One Way Vision", "ACP Sheets", "Sunboard", "Foam Board", "Eco-Solvent & UV Ink", "Lamination Film", "Printing Media"],
   },
   {

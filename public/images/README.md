@@ -10,9 +10,10 @@ Your own project photos, wired across Hero, Services and Showcase.
 | **Starflex roll** (kraft roll, "starflex made in Korea") | `public/images/products/star-flex.jpg` | Star Flex product card |
 | **Airport backlit gate sign** (Gate 30 / 31–42) | `public/images/products/backlit-flex.jpg` | Backlit Flex product card |
 | **"SIGN" night installation** (worker on lift) | `public/images/services/installation.jpg` | Installation Services card |
+| **DERFLEX media collage** (wide-format media) | `public/images/services/materials.jpg` | Advertising Materials card |
 
 The two **product** images appear automatically once saved (no code change needed).
-The **installation** image is already wired to that slot.
+The **installation** and **materials** images are already wired to their slots.
 
 > Tip: compress to < 250 KB at squoosh.app. Until a file is added, a clean
 > branded placeholder (or product render) shows in its place.
