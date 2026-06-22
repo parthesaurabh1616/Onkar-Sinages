@@ -9,6 +9,7 @@ export type Product = {
   inStock: boolean;
   specs: { label: string; value: string }[];
   gsm?: string;
+  image?: string;
   accentFrom: string;
   accentTo: string;
 };
@@ -51,6 +52,7 @@ export const PRODUCTS: Product[] = [
     weatherResistance: "4–6 years outdoor",
     inStock: true,
     gsm: "440–570 GSM",
+    image: "/images/products/backlit-flex.webp",
     accentFrom: "#60A5FA",
     accentTo: "#2563EB",
     specs: [
@@ -74,6 +76,7 @@ export const PRODUCTS: Product[] = [
     weatherResistance: "2–3 years outdoor",
     inStock: true,
     gsm: "300–340 GSM",
+    image: "/images/products/star-flex.webp",
     accentFrom: "#38BDF8",
     accentTo: "#0EA5E9",
     specs: [
@@ -320,7 +323,7 @@ export const SERVICES: Service[] = [
     name: "Advertising Materials",
     tagline: "Bulk supply of every print & signage substrate.",
     icon: "boxes",
-    image: "/images/services/materials.jpg",
+    image: "/images/services/materials.webp",
     items: ["Flex Rolls", "Vinyl", "One Way Vision", "ACP Sheets", "Sunboard", "Foam Board", "Eco-Solvent & UV Ink", "Lamination Film", "Printing Media"],
   },
   {

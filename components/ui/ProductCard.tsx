@@ -23,11 +23,11 @@ export function ProductCard({ product }: { product: Product }) {
       {/* Media — real photo drops over the SVG render */}
       <div className="relative aspect-[16/10] overflow-hidden">
         <Media
-          src={`/images/products/${product.slug}.jpg`}
+          src={product.image ?? `/images/products/${product.slug}.jpg`}
           alt={product.name}
           className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
           overlay={false}
-          caption={`products/${product.slug}.jpg`}
+          caption={`products/${product.slug}`}
           placeholder={<ProductArt product={product} />}
         />
 
