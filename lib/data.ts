@@ -240,28 +240,6 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
-    slug: "led-module",
-    name: "LED Modules",
-    category: "LED & Signage",
-    tagline: "High-output LED modules for glow & channel signage",
-    features: [
-      "Constant-current, long-life LEDs",
-      "Even illumination, no hotspots",
-      "IP-rated for outdoor signboards",
-    ],
-    applications: ["Glow Sign Boards", "Channel Letters", "Lightboxes"],
-    weatherResistance: "Outdoor IP65 rated",
-    inStock: true,
-    accentFrom: "#E2E8F0",
-    accentTo: "#60A5FA",
-    specs: [
-      { label: "Power", value: "DC 12V" },
-      { label: "Lens", value: "160° wide" },
-      { label: "Rating", value: "IP65" },
-      { label: "Colour", value: "White / RGB" },
-    ],
-  },
-  {
     slug: "acrylic-sheet",
     name: "Decorative Acrylic Sheet",
     category: "Boards & Sheets",
