@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { cn } from "@/lib/utils";
 
-const CATEGORIES = ["All", "Flex Rolls", "Vinyl", "Inks", "Lamination", "ACP", "Consumables"];
+const CATEGORIES = ["All", "Flex Rolls", "Vinyl", "Inks", "Lamination", "ACP", "Boards & Sheets", "LED & Signage", "Display", "Consumables"];
 
 export function Products() {
   const [category, setCategory] = useState("All");
