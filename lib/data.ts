@@ -284,28 +284,6 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
-    slug: "hdpe-sheet",
-    name: "HDPE Sheet",
-    category: "Boards & Sheets",
-    tagline: "Durable HDPE sheets for rigid signage & fabrication",
-    features: [
-      "Tough, moisture & chemical resistant",
-      "Lightweight, easy to fabricate",
-      "Smooth printable surface",
-    ],
-    applications: ["Rigid Signage", "Partitions", "Industrial Boards"],
-    weatherResistance: "Weatherproof",
-    inStock: true,
-    accentFrom: "#CBD5E1",
-    accentTo: "#64748B",
-    specs: [
-      { label: "Thickness", value: "2–20 mm" },
-      { label: "Surface", value: "Matte / Smooth" },
-      { label: "Colour", value: "White + custom" },
-      { label: "Size", value: "Standard sheets" },
-    ],
-  },
-  {
     slug: "roll-up-stand",
     name: "Roll Up Banner Stand",
     category: "Display",
