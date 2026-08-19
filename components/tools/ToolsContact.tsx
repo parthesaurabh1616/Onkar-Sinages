@@ -78,6 +78,25 @@ export function ToolsContact() {
               </span>
             </a>
 
+            <a
+              href="/cutting-tools-catalogue.pdf"
+              download
+              className="flex items-center gap-4 rounded-2xl border border-accent/30 bg-accent/10 p-5 transition hover:border-accent/60 hover:bg-accent/15"
+            >
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent/30 bg-accent/15 text-highlight">
+                <Icon name="download" className="h-5 w-5" />
+              </span>
+              <span>
+                <span className="block font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+                  Catalogue
+                </span>
+                <span className="block font-semibold text-white">
+                  Download the cutting tools catalogue
+                </span>
+                <span className="block text-xs text-muted">PDF · 12 pages · 2.7 MB</span>
+              </span>
+            </a>
+
             <div className="rounded-2xl border border-surface-border bg-surface-raised/30 p-5">
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
                 Our role

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Onkar AP Signages — Industrial Cutting Tools Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+<style>
+  /*
+    Industrial Cutting Tools catalogue — A4 portrait, 12pp.
+    Shares the design language of booklet.html (Corporate Profile) so both
+    documents read as one company.
+
+    CONTENT RULE: Onkar is the distributor. Aayudh Tools is named as the
+    manufacturer, but NO Aayudh contact route appears anywhere in this
+    document — every enquiry path in here is Onkar's.
+  */
+  :root{
+    --ink:#14110D; --ink2:#1B1610; --line-d:#322B22;
+    --paper:#F4F0E8; --paper2:#FBF9F4; --p-line:#E0D8C8; --p-muted:#8A8275;
+    --p-ink:#1A1612;
+    --o:#FF5A1E; --o2:#FF7A45; --o-deep:#C6410A;
+    --white:#F7F3EA; --muted:#A9A092;
+    --c:#00A6E0; --m:#EC008C; --y:#FFD400;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  html,body{ background:#000; font-family:'Inter',system-ui,sans-serif; }
+  @page{ size:A4 portrait; margin:0; }
+
+  .page{ width:210mm; height:297mm; position:relative; overflow:hidden; page-break-after:always; background:var(--paper); color:var(--p-ink); }
+  .page:last-child{ page-break-after:auto; }
+  .dark{ background:var(--ink); color:var(--white); }
+
+  .disp{ font-family:'Archivo',sans-serif; font-weight:900; letter-spacing:-.022em; line-height:1.0; }
+  .mono{ font-family:'IBM Plex Mono',monospace; }
+  .thin{ font-weight:300; }
+
+  .pad{ position:absolute; inset:0; padding:20mm 18mm 16mm; display:flex; flex-direction:column; }
+
+  .kicker{ font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--o); display:flex; align-items:center; gap:10px; }
+  .kicker.lt{ color:var(--o-deep); }
+  .kicker::before{ content:""; width:24px; height:1.5px; background:currentColor; }
+
+  .rule{ height:1px; background:var(--p-line); }
+  .rule.d{ background:var(--line-d); }
+  .cmyk{ height:4px; background:linear-gradient(90deg,var(--c) 0 25%,var(--m) 25% 50%,var(--y) 50% 75%,#111 75% 100%); }
+
+  .imgcover{ width:100%; height:100%; object-fit:cover; display:block; }
+  .imgfit{ width:100%; height:100%; object-fit:contain; display:block; }
+  .ovl{ position:absolute; inset:0; }
+
+  .pnum{ position:absolute; bottom:10mm; left:18mm; right:18mm; display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--p-muted); }
+  .dark .pnum{ color:#6f675b; }
+
+  .wm{ font-family:'Archivo',sans-serif; font-weight:800; letter-spacing:-.01em; }
+  .wm b{ color:var(--o); } .wm span{ color:#8c857a; }
+
+  .halftone{ background-image:radial-gradient(rgba(169,160,146,.14) 1px, transparent 1.1px); background-size:16px 16px; }
+  .halftone-lt{ background-image:radial-gradient(rgba(26,22,18,.10) 1px, transparent 1.1px); background-size:16px 16px; }
+
+  h2.sec{ font-family:'Archivo',sans-serif; font-weight:900; letter-spacing:-.022em; line-height:1.02; font-size:34px; margin-top:12px; }
+  p.lede{ font-weight:300; font-size:12.5px; line-height:1.62; margin-top:12px; }
+
+  /* product card ------------------------------------------------------- */
+  .pcard{ border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; overflow:hidden; display:flex; flex-direction:column; }
+  .pcard .well{ height:36mm; background:#fff; border-bottom:1px solid var(--p-line); padding:5px; }
+  .pcard .body{ padding:9px 10px 10px; flex:1; display:flex; flex-direction:column; }
+  .pname{ font-family:'Archivo',sans-serif; font-weight:800; font-size:13px; color:var(--p-ink); letter-spacing:-.01em; }
+  .psum{ font-weight:300; font-size:10px; line-height:1.5; color:#5d564b; margin-top:4px; }
+  .ops{ display:flex; flex-wrap:wrap; gap:3px; margin-top:7px; }
+  .op{ font-family:'IBM Plex Mono',monospace; font-size:7px; letter-spacing:.08em; text-transform:uppercase; color:#6f675b; background:#EFEAE0; border-radius:3px; padding:2.5px 5px; }
+
+  .claim{ border:1px solid rgba(255,90,30,.28); background:rgba(255,90,30,.07); border-radius:8px; padding:10px 12px; }
+  .claim .src{ font-family:'IBM Plex Mono',monospace; font-size:7.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--o); }
+
+  .chip{ border:1px solid var(--line-d); background:rgba(255,255,255,.05); border-radius:999px; padding:5px 11px; font-size:10px; color:#d6d0c4; }
+  .chip.lt{ border-color:var(--p-line); background:#fff; color:#5d564b; }
+</style>
+</head>
+<body>
+
+<!-- ════════════ 1 · COVER ════════════ -->
+<section class="page dark">
+  <img class="imgcover ovl" src="/images/tools/hero-carbide-tools.jpg" alt="">
+  <div class="ovl" style="background:linear-gradient(180deg,rgba(12,10,7,.93) 30%,rgba(12,10,7,.55) 58%,rgba(12,10,7,.92));"></div>
+  <div class="cmyk ovl" style="height:5px;"></div>
+  <div class="pad">
+    <div class="mono" style="font-size:10px; letter-spacing:.36em; color:var(--muted);">PRODUCT CATALOGUE · 2026</div>
+    <div class="wm" style="font-size:23px; margin-top:9mm;"><b>ONKAR AP</b> <span>SIGNAGES</span></div>
+    <div style="width:52px; height:3px; background:var(--o); margin:11px 0 0;"></div>
+    <div style="flex:1;"></div>
+    <div class="mono" style="font-size:9px; letter-spacing:.28em; color:var(--o2);">DIVISION 02</div>
+    <h1 class="disp" style="font-size:50px; margin-top:9px; text-transform:uppercase;">Industrial<br>Cutting <span style="color:var(--o);">Tools</span></h1>
+    <p class="thin" style="margin-top:14px; font-size:14px; color:#ddd7cb; max-width:120mm; line-height:1.55;">
+      Solid Carbide · HSS · Brazed · Special &amp; Form Tools
+    </p>
+    <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="chip">Ground to your component</span>
+      <span class="chip">Re-New reconditioning</span>
+      <span class="chip">Application engineering</span>
+    </div>
+    <div class="rule d" style="margin-top:16px;"></div>
+    <p class="mono" style="margin-top:12px; font-size:9px; letter-spacing:.16em; color:var(--muted);">
+      AUTHORISED DISTRIBUTOR — AAYUDH TOOLS
+    </p>
+  </div>
+  <div class="pnum"><span>onkarsinages.com</span><span>Onkarap Signages Pvt. Ltd. · Est. 2019</span></div>
+</section>
+
+<!-- ════════════ 2 · THE OFFER ════════════ -->
+<section class="page">
+  <div class="halftone-lt ovl" style="opacity:.7;"></div>
+  <div class="pad">
+    <div class="kicker lt">Who You Are Buying From</div>
+    <h2 class="sec" style="max-width:150mm;">A supply company that now<br>stocks <span style="color:var(--o);">cutting tools.</span></h2>
+    <p class="lede" style="color:#4a443b; max-width:150mm;">
+      Onkarap Signages Pvt. Ltd. has supplied Maharashtra industry since 2019 from three
+      branches. Our original business is advertising and signage material. We have since
+      taken on the distributorship for Aayudh Tools, and now supply solid carbide, HSS,
+      brazed and special tooling to manufacturing plants and CNC job shops.
+    </p>
+
+    <div class="rule" style="margin-top:16px;"></div>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); margin-top:14px;">
+      <div style="padding-right:14px; border-right:1px solid var(--p-line);">
+        <div class="mono" style="font-size:9px; letter-spacing:.18em; color:var(--o);">2019</div>
+        <div style="margin-top:7px; font-family:'Archivo'; font-weight:800; font-size:15px;">Established</div>
+        <div class="thin" style="margin-top:4px; font-size:10px; color:#6a6256;">Onkarap Signages Pvt. Ltd.</div>
+      </div>
+      <div style="padding:0 14px; border-right:1px solid var(--p-line);">
+        <div class="mono" style="font-size:9px; letter-spacing:.18em; color:var(--o);">REACH</div>
+        <div style="margin-top:7px; font-family:'Archivo'; font-weight:800; font-size:15px;">3 Branches</div>
+        <div class="thin" style="margin-top:4px; font-size:10px; color:#6a6256;">PCMC · Pune · Satara</div>
+      </div>
+      <div style="padding:0 14px; border-right:1px solid var(--p-line);">
+        <div class="mono" style="font-size:9px; letter-spacing:.18em; color:var(--o);">RANGE</div>
+        <div style="margin-top:7px; font-family:'Archivo'; font-weight:800; font-size:15px;">4 Families</div>
+        <div class="thin" style="margin-top:4px; font-size:10px; color:#6a6256;">Carbide · Special · HSS · Brazed</div>
+      </div>
+      <div style="padding-left:14px;">
+        <div class="mono" style="font-size:9px; letter-spacing:.18em; color:var(--o);">MADE BY</div>
+        <div style="margin-top:7px; font-family:'Archivo'; font-weight:800; font-size:15px;">Aayudh Tools</div>
+        <div class="thin" style="margin-top:4px; font-size:10px; color:#6a6256;">Over a decade in solid carbide</div>
+      </div>
+    </div>
+
+    <div class="rule" style="margin-top:14px;"></div>
+
+    <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+      <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; padding:13px 15px;">
+        <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o);">OUR ROLE</div>
+        <div style="margin-top:8px; font-family:'Archivo'; font-weight:800; font-size:14px;">We supply and support</div>
+        <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#5d564b;">
+          We hold stock, handle application enquiries, and coordinate special-tool
+          development and reconditioning with the manufacturer. One local point of
+          contact for quotation, delivery and service.
+        </p>
+      </div>
+      <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; padding:13px 15px;">
+        <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o);">MANUFACTURER</div>
+        <div style="margin-top:8px; font-family:'Archivo'; font-weight:800; font-size:14px;">Aayudh Tools grinds them</div>
+        <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#5d564b;">
+          Tools are produced on CNC 6-axis grinding machines with matching inspection
+          equipment. Aayudh has supplied solid carbide tooling to Indian industry for
+          over a decade.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;">
+      <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o-deep);">WHAT IS IN THIS CATALOGUE</div>
+      <div style="margin-top:9px; display:grid; grid-template-columns:1fr 1fr; gap:0 22px;">
+        <div style="display:flex; gap:9px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--p-line);">
+          <span class="mono" style="font-size:9px; color:var(--o); min-width:15px;">03</span>
+          <span style="font-family:'Archivo'; font-weight:800; font-size:10.5px; color:var(--p-ink); min-width:42mm;">The Range</span>
+          <span class="thin" style="font-size:9px; color:#7a7265;">Four families and how specifications are set</span>
+        </div>
+        <div style="display:flex; gap:9px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--p-line);">
+          <span class="mono" style="font-size:9px; color:var(--o); min-width:15px;">04</span>
+          <span style="font-family:'Archivo'; font-weight:800; font-size:10.5px; color:var(--p-ink); min-width:42mm;">Solid Carbide Tools</span>
+          <span class="thin" style="font-size:9px; color:#7a7265;">Drills, end mills, step tools, form cutters</span>
+        </div>
+        <div style="display:flex; gap:9px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--p-line);">
+          <span class="mono" style="font-size:9px; color:var(--o); min-width:15px;">05</span>
+          <span style="font-family:'Archivo'; font-weight:800; font-size:10.5px; color:var(--p-ink); min-width:42mm;">Special &amp; Form Tools</span>
+          <span class="thin" style="font-size:9px; color:#7a7265;">Combination tooling and flute-polish grinds</span>
+        </div>
+        <div style="display:flex; gap:9px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--p-line);">
+          <span class="mono" style="font-size:9px; color:var(--o); min-width:15px;">06</span>
+          <span style="font-family:'Archivo'; font-weight:800; font-size:10.5px; color:var(--p-ink); min-width:42mm;">HSS &amp; Brazed Tools</span>
+          <span class="thin" style="font-size:9px; color:#7a7265;">General engineering and larger diameters</span>
+        </div>
+        <div style="display:flex; gap:9px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--p-line);">
+          <span class="mono" style="font-size:9px; color:var(--o); min-width:15px;">07</span>
+          <span style="font-family:'Archivo'; font-weight:800; font-size:10.5px; color:var(--p-ink); min-width:42mm;">Problems We Solve</span>
+          <span class="thin" style="font-size:9px; color:#7a7265;">Cycle time, chip flow, tool cost, tool life</span>
+        </div>
+        <div style="display:flex; gap:9px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--p-line);">
+          <span class="mono" style="font-size:9px; color:var(--o); min-width:15px;">08</span>
+          <span style="font-family:'Archivo'; font-weight:800; font-size:10.5px; color:var(--p-ink); min-width:42mm;">Re-New</span>
+          <span class="thin" style="font-size:9px; color:#7a7265;">Reconditioning worn and complex tooling</span>
+        </div>
+        <div style="display:flex; gap:9px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--p-line);">
+          <span class="mono" style="font-size:9px; color:var(--o); min-width:15px;">09</span>
+          <span style="font-family:'Archivo'; font-weight:800; font-size:10.5px; color:var(--p-ink); min-width:42mm;">Behind the Tools</span>
+          <span class="thin" style="font-size:9px; color:#7a7265;">Manufacturing and who does what</span>
+        </div>
+        <div style="display:flex; gap:9px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--p-line);">
+          <span class="mono" style="font-size:9px; color:var(--o); min-width:15px;">10</span>
+          <span style="font-family:'Archivo'; font-weight:800; font-size:10.5px; color:var(--p-ink); min-width:42mm;">Applications</span>
+          <span class="thin" style="font-size:9px; color:#7a7265;">Industries, materials and what we handle</span>
+        </div>
+        <div style="display:flex; gap:9px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--p-line);">
+          <span class="mono" style="font-size:9px; color:var(--o); min-width:15px;">11</span>
+          <span style="font-family:'Archivo'; font-weight:800; font-size:10.5px; color:var(--p-ink); min-width:42mm;">How to Enquire</span>
+          <span class="thin" style="font-size:9px; color:#7a7265;">What to send and what happens next</span>
+        </div>
+        <div style="display:flex; gap:9px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--p-line);">
+          <span class="mono" style="font-size:9px; color:var(--o); min-width:15px;">12</span>
+          <span style="font-family:'Archivo'; font-weight:800; font-size:10.5px; color:var(--p-ink); min-width:42mm;">Contact</span>
+          <span class="thin" style="font-size:9px; color:#7a7265;">Talk to us directly</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:8px;">
+      <div style="height:26mm; border-radius:7px; overflow:hidden; border:1px solid var(--p-line);"><img class="imgcover" src="/images/tools/mfg-cnc-grinding.jpg" alt=""></div>
+      <div style="height:26mm; border-radius:7px; overflow:hidden; border:1px solid var(--p-line);"><img class="imgcover" src="/images/tools/mfg-rollomatic-grinding.jpg" alt=""></div>
+      <div style="height:26mm; border-radius:7px; overflow:hidden; border:1px solid var(--p-line);"><img class="imgcover" src="/images/tools/mfg-walter-inspection.jpg" alt=""></div>
+      <div style="height:26mm; border-radius:7px; overflow:hidden; border:1px solid var(--p-line);"><img class="imgcover" src="/images/tools/mfg-anca-grinder.jpg" alt=""></div>
+      <div style="height:26mm; border-radius:7px; overflow:hidden; border:1px solid var(--p-line);"><img class="imgcover" src="/images/tools/mfg-regrinding.jpg" alt=""></div>
+    </div>
+  </div>
+  <div class="pnum"><span class="wm"><b>ONKAR AP</b> <span>SIGNAGES</span></span><span>02 — The Offer</span></div>
+</section>
+
+<!-- ════════════ 3 · THE RANGE ════════════ -->
+<section class="page dark">
+  <div class="halftone ovl" style="opacity:.35;"></div>
+  <div class="pad">
+    <div class="kicker">The Range</div>
+    <h2 class="sec" style="max-width:150mm;">Four families,<br>one <span style="color:var(--o);">supply point.</span></h2>
+    <p class="lede" style="color:#cfc8bc; max-width:145mm;">
+      Standard geometries where a catalogue size fits, and ground-to-drawing tooling
+      where it does not.
+    </p>
+
+    <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:10px; flex:1;">
+
+      <div style="border:1px solid var(--line-d); border-radius:9px; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:32mm; background:#fff; padding:6px;"><img class="imgfit" src="/images/tools/solid-carbide-range.jpg" alt=""></div>
+        <div style="padding:12px 13px; flex:1;">
+          <div style="font-family:'Archivo'; font-weight:800; font-size:16px;">Solid Carbide Tools</div>
+          <div class="mono" style="margin-top:4px; font-size:7.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--o2);">Drills · End Mills · Reamers · Step Tools</div>
+          <p class="thin" style="margin-top:8px; font-size:10px; line-height:1.55; color:#c3bcb0;">
+            The core range for production machining — standard geometries and
+            application-specific grinds.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:10px;">
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Drills</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">End Mills</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Reamers</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Step Tools</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Profile Tools</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--line-d); border-radius:9px; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:32mm; background:#0e0c09; padding:6px;"><img class="imgfit" src="/images/tools/combination-form-tool.jpg" alt=""></div>
+        <div style="padding:12px 13px; flex:1;">
+          <div style="font-family:'Archivo'; font-weight:800; font-size:16px;">Special &amp; Form Tools</div>
+          <div class="mono" style="margin-top:4px; font-size:7.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--o2);">Step · Combination · Profile / Form</div>
+          <p class="thin" style="margin-top:8px; font-size:10px; line-height:1.55; color:#c3bcb0;">
+            Developed around one component and one operation. Built entirely to
+            drawing, not to a size chart.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:10px;">
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Special Step Tools</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Combination Tools</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Profile / Form</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Drill + Reamer</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--line-d); border-radius:9px; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:32mm; background:#fff; padding:6px;"><img class="imgfit" src="/images/tools/hss-range.jpg" alt=""></div>
+        <div style="padding:12px 13px; flex:1;">
+          <div style="font-family:'Archivo'; font-weight:800; font-size:16px;">HSS Tools</div>
+          <div class="mono" style="margin-top:4px; font-size:7.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--o2);">End Mills · Cutters · Drills · Reamers</div>
+          <p class="thin" style="margin-top:8px; font-size:10px; line-height:1.55; color:#c3bcb0;">
+            High-speed steel tooling for general engineering, so one order can cover
+            a full tool crib.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:10px;">
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">End Mills</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">T-Slot Cutters</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Drills</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Taper-Shank Reamers</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Shell Cutters</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--line-d); border-radius:9px; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:32mm; background:#fff; padding:6px;"><img class="imgfit" src="/images/tools/brazed-range.jpg" alt=""></div>
+        <div style="padding:12px 13px; flex:1;">
+          <div style="font-family:'Archivo'; font-weight:800; font-size:16px;">Brazed Tools</div>
+          <div class="mono" style="margin-top:4px; font-size:7.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--o2);">Step Tools · Counterbores · Reamers</div>
+          <p class="thin" style="margin-top:8px; font-size:10px; line-height:1.55; color:#c3bcb0;">
+            Carbide-tipped construction where the diameter or the operation suits it
+            better than solid carbide.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:10px;">
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Brazed Step Tools</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Counterbores</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Reamers</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Shell Cutters</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="claim" style="margin-top:14px; border-color:var(--line-d); background:rgba(255,255,255,.04);">
+      <div class="src">How specifications work</div>
+      <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#d2ccc0;">
+        Diameter, flute count, geometry, coating and carbide grade are set against your
+        component and operation — so this catalogue lists what each tool does rather than
+        a fixed size table. Send a drawing or a sample and we will quote to it.
+      </p>
+    </div>
+  </div>
+  <div class="pnum"><span class="wm"><b>ONKAR AP</b> <span>SIGNAGES</span></span><span>03 — The Range</span></div>
+</section>
+
+<!-- ════════════ 4 · SOLID CARBIDE ════════════ -->
+<section class="page">
+  <div class="halftone-lt ovl" style="opacity:.7;"></div>
+  <div class="pad">
+    <div class="kicker lt">Family 01</div>
+    <h2 class="sec">Solid Carbide Tools</h2>
+    <p class="lede" style="color:#4a443b; max-width:150mm;">
+      Production drilling, milling, reaming and stepping. Supplied as standard grinds or
+      developed against a specific component.
+    </p>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:repeat(3,1fr); gap:9px;">
+
+      <div class="pcard">
+        <div class="well"><img class="imgfit" src="/images/tools/carbide-drill.jpg" alt=""></div>
+        <div class="body">
+          <div class="pname">Solid Carbide Drill</div>
+          <div class="psum">Production drilling in a single pass, ground for chip evacuation.</div>
+          <div class="ops"><span class="op">Drilling</span><span class="op">Pilot holes</span><span class="op">Through &amp; blind</span></div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="well"><img class="imgfit" src="/images/tools/carbide-end-mill.jpg" alt=""></div>
+        <div class="body">
+          <div class="pname">Solid Carbide End Mill</div>
+          <div class="psum">Milling and profiling, in standard and application-specific grinds.</div>
+          <div class="ops"><span class="op">Slotting</span><span class="op">Profiling</span><span class="op">Shoulder</span><span class="op">Finishing</span></div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="well"><img class="imgfit" src="/images/tools/carbide-step-drill.jpg" alt=""></div>
+        <div class="body">
+          <div class="pname">Carbide Step Drill</div>
+          <div class="psum">Drills and steps a hole in one entry — fewer tool changes per cycle.</div>
+          <div class="ops"><span class="op">Drilling</span><span class="op">Stepping</span><span class="op">Chamfering</span></div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="well"><img class="imgfit" src="/images/tools/carbide-step-tool.jpg" alt=""></div>
+        <div class="body">
+          <div class="pname">Special Step Tool</div>
+          <div class="psum">Multi-diameter tool replacing a sequence of separate operations.</div>
+          <div class="ops"><span class="op">Multi-dia drilling</span><span class="op">Counterboring</span></div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="well"><img class="imgfit" src="/images/tools/carbide-form-cutter.jpg" alt=""></div>
+        <div class="body">
+          <div class="pname">Carbide Form Cutter</div>
+          <div class="psum">Cuts a finished profile in one pass instead of interpolating it.</div>
+          <div class="ops"><span class="op">Form milling</span><span class="op">Profiling</span><span class="op">Grooving</span></div>
+        </div>
+      </div>
+
+      <div class="pcard" style="background:var(--ink); border-color:var(--ink);">
+        <div class="body" style="justify-content:center;">
+          <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o2);">SPECIFICATION</div>
+          <div style="margin-top:8px; font-family:'Archivo'; font-weight:800; font-size:13px; color:var(--white); line-height:1.25;">
+            Made to your component
+          </div>
+          <p class="thin" style="margin-top:7px; font-size:9.5px; line-height:1.55; color:#c3bcb0;">
+            Diameter, flute count, geometry, coating and carbide grade are set against
+            your material and operation. Share a drawing or sample for a quotation.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:10px; align-items:stretch;">
+      <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; padding:13px 15px;">
+        <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o-deep);">APPLICATION GEOMETRIES</div>
+        <p class="thin" style="margin-top:8px; font-size:10.5px; line-height:1.6; color:#5d564b;">
+          End geometry and coating are chosen for the material and the cut — not carried
+          over from the last job. Where a component runs in volume, the geometry is worth
+          engineering rather than approximating.
+        </p>
+      </div>
+      <div style="height:32mm; border-radius:9px; overflow:hidden; border:1px solid var(--p-line); background:#0e0c09; padding:5px;">
+        <img class="imgfit" src="/images/tools/application-geometries.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="pnum"><span class="wm"><b>ONKAR AP</b> <span>SIGNAGES</span></span><span>04 — Solid Carbide</span></div>
+</section>
+
+<!-- ════════════ 5 · SPECIAL & FORM ════════════ -->
+<section class="page dark">
+  <div class="halftone ovl" style="opacity:.3;"></div>
+  <div class="pad">
+    <div class="kicker">Family 02</div>
+    <h2 class="sec">Special &amp; <span style="color:var(--o);">Form Tools</span></h2>
+    <p class="lede" style="color:#cfc8bc; max-width:150mm;">
+      Where the saving is not in the price of the tool but in the number of operations it
+      removes from the cycle.
+    </p>
+
+    <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+      <div style="border:1px solid var(--line-d); border-radius:9px; overflow:hidden;">
+        <div style="height:34mm; background:#0e0c09; padding:6px;"><img class="imgfit" src="/images/tools/drill-reamer-dreamer.jpg" alt=""></div>
+        <div style="padding:12px 14px;">
+          <div style="font-family:'Archivo'; font-weight:800; font-size:15px;">Drill + Reamer Combination</div>
+          <p class="thin" style="margin-top:7px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">
+            Drilling and reaming combined into one tool and one entry. Aayudh calls this
+            the Dreamer — it removes a tool change and a pass from the cycle.
+          </p>
+          <div class="ops" style="margin-top:8px;">
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Drilling</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Reaming</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--line-d); border-radius:9px; overflow:hidden;">
+        <div style="height:34mm; background:#0e0c09; padding:6px;"><img class="imgfit" src="/images/tools/combination-form-tool.jpg" alt=""></div>
+        <div style="padding:12px 14px;">
+          <div style="font-family:'Archivo'; font-weight:800; font-size:15px;">Combination Form Tool</div>
+          <p class="thin" style="margin-top:7px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">
+            Two operations combined with a profile milling form tool. This is the part of
+            the range Aayudh specialises in.
+          </p>
+          <div class="ops" style="margin-top:8px;">
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Profile milling</span>
+            <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Form generation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px; border:1px solid var(--line-d); border-radius:9px; overflow:hidden; display:grid; grid-template-columns:0.85fr 1.15fr;">
+      <div style="background:#0e0c09; padding:8px; height:38mm;"><img class="imgfit" src="/images/tools/flute-polish-tools.jpg" alt=""></div>
+      <div style="padding:14px 16px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:15px;">FP (Flute Polish) Tools</div>
+        <p class="thin" style="margin-top:7px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">
+          Built-up edge and poor chip evacuation shorten tool life long before the cutting
+          edge actually wears out. FP tools pair the flute form with the flute finish so
+          both are addressed together — worth specifying on sticky and non-ferrous work.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:10px; border:1px solid var(--line-d); border-radius:9px; overflow:hidden; display:grid; grid-template-columns:1.15fr 0.85fr;">
+      <div style="padding:14px 16px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:15px;">Special Step Tools</div>
+        <p class="thin" style="margin-top:7px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">
+          A single body carrying several ground diameters, replacing a sequence of
+          separate operations. Where a component runs in volume, the step tool usually
+          pays for itself in cycle time and spindle changes long before it wears out.
+        </p>
+        <div class="ops" style="margin-top:8px;">
+          <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Multi-dia drilling</span>
+          <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Counterboring</span>
+          <span class="op" style="background:rgba(255,255,255,.07); color:#bdb6aa;">Chamfering</span>
+        </div>
+      </div>
+      <div style="background:#fff; padding:8px; height:38mm;"><img class="imgfit" src="/images/tools/carbide-step-tool.jpg" alt=""></div>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div class="claim">
+      <div class="src">Stated by Aayudh Tools</div>
+      <p class="thin" style="margin-top:7px; font-size:11px; line-height:1.6; color:#e3ded3;">
+        For small to medium batches of non-ferrous components, Aayudh's 'N' geometry and
+        coated tools are stated to give <b style="font-weight:600; color:#fff;">30–50% of PCD life</b>
+        and <b style="font-weight:600; color:#fff;">2.5–3× the life of conventional solid carbide</b>,
+        where PCD tooling typically costs 5–10× solid carbide.
+      </p>
+      <p class="mono" style="margin-top:8px; font-size:7.5px; letter-spacing:.14em; color:var(--muted);">
+        FIGURES AS PUBLISHED BY THE MANUFACTURER · RESULT VARIES BY COMPONENT AND CONDITION
+      </p>
+    </div>
+  </div>
+  <div class="pnum"><span class="wm"><b>ONKAR AP</b> <span>SIGNAGES</span></span><span>05 — Special &amp; Form</span></div>
+</section>
+
+<!-- ════════════ 6 · HSS & BRAZED ════════════ -->
+<section class="page">
+  <div class="halftone-lt ovl" style="opacity:.7;"></div>
+  <div class="pad">
+    <div class="kicker lt">Families 03 &amp; 04</div>
+    <h2 class="sec">HSS &amp; Brazed Tools</h2>
+    <p class="lede" style="color:#4a443b; max-width:150mm;">
+      Supplied alongside the carbide range so a single order can cover the tool crib —
+      and so larger diameters get the construction that actually suits them.
+    </p>
+
+    <div class="mono" style="margin-top:16px; font-size:8.5px; letter-spacing:.2em; color:var(--o-deep);">HIGH-SPEED STEEL</div>
+    <div style="margin-top:8px; display:grid; grid-template-columns:repeat(4,1fr); gap:9px;">
+      <div class="pcard">
+        <div class="well" style="height:34mm;"><img class="imgfit" src="/images/tools/hss-end-mill.jpg" alt=""></div>
+        <div class="body"><div class="pname">HSS End Mill</div><div class="psum">General-purpose milling for job-shop and maintenance work.</div></div>
+      </div>
+      <div class="pcard">
+        <div class="well" style="height:34mm;"><img class="imgfit" src="/images/tools/hss-t-slot-cutter.jpg" alt=""></div>
+        <div class="body"><div class="pname">HSS T-Slot Cutter</div><div class="psum">Cuts T-slots and undercuts on machine tables and fixtures.</div></div>
+      </div>
+      <div class="pcard">
+        <div class="well" style="height:34mm;"><img class="imgfit" src="/images/tools/hss-drill.jpg" alt=""></div>
+        <div class="body"><div class="pname">HSS Drill</div><div class="psum">Twist drilling across general engineering materials.</div></div>
+      </div>
+      <div class="pcard">
+        <div class="well" style="height:34mm;"><img class="imgfit" src="/images/tools/hss-taper-reamer.jpg" alt=""></div>
+        <div class="body"><div class="pname">HSS Taper-Shank Reamer</div><div class="psum">Finish reaming to size on taper-shank machine spindles.</div></div>
+      </div>
+    </div>
+
+    <div class="mono" style="margin-top:18px; font-size:8.5px; letter-spacing:.2em; color:var(--o-deep);">BRAZED CARBIDE</div>
+    <div style="margin-top:8px; display:grid; grid-template-columns:0.8fr 1.2fr; gap:9px;">
+      <div class="pcard">
+        <div class="well" style="height:34mm;"><img class="imgfit" src="/images/tools/brazed-shell-cutter.jpg" alt=""></div>
+        <div class="body">
+          <div class="pname">Brazed Shell Cutter</div>
+          <div class="psum">Carbide-tipped cutter for larger-diameter facing and counterboring.</div>
+          <div class="ops"><span class="op">Counterboring</span><span class="op">Facing</span></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="well" style="height:34mm;"><img class="imgfit" src="/images/tools/brazed-range.jpg" alt=""></div>
+        <div class="body">
+          <div class="pname">Brazed Step Tools &amp; Reamers</div>
+          <div class="psum">Tipped step tools and reamers for cases where solid carbide is not the economical choice at that diameter.</div>
+          <div class="ops"><span class="op">Stepping</span><span class="op">Counterboring</span><span class="op">Reaming</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; padding:13px 16px;">
+      <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o-deep);">CHOOSING BETWEEN THEM</div>
+      <p class="thin" style="margin-top:8px; font-size:10.5px; line-height:1.6; color:#5d564b;">
+        Solid carbide earns its cost on volume, speed and close tolerance. HSS remains the
+        sensible choice for lower-speed, mixed-batch and maintenance work. Brazed
+        construction makes sense as diameters grow, where an all-carbide body would be
+        expensive without adding performance. Tell us the component and we will say which
+        of the three the job actually needs.
+      </p>
+    </div>
+  </div>
+  <div class="pnum"><span class="wm"><b>ONKAR AP</b> <span>SIGNAGES</span></span><span>06 — HSS &amp; Brazed</span></div>
+</section>
+
+<!-- ════════════ 7 · PROBLEMS WE SOLVE ════════════ -->
+<section class="page dark">
+  <div class="halftone ovl" style="opacity:.3;"></div>
+  <div class="pad">
+    <div class="kicker">Engineering Problems</div>
+    <h2 class="sec" style="max-width:150mm;">What the tooling is<br>actually <span style="color:var(--o);">solving.</span></h2>
+    <p class="lede" style="color:#cfc8bc; max-width:145mm;">
+      Four situations that come up on almost every shop floor — and the tooling approach
+      for each.
+    </p>
+
+    <div style="margin-top:18px; display:flex; flex-direction:column; gap:11px; flex:1;">
+
+      <div style="flex:1; border:1px solid var(--line-d); border-radius:9px; padding:14px 16px; display:grid; grid-template-columns:34mm 1fr; gap:16px; align-items:center;">
+        <div>
+          <div class="mono" style="font-size:7.5px; letter-spacing:.18em; color:var(--o2);">PROBLEM 01</div>
+          <div style="margin-top:6px; font-family:'Archivo'; font-weight:800; font-size:12.5px; line-height:1.25;">Too many tool changes in the cycle</div>
+        </div>
+        <div>
+          <div style="font-family:'Archivo'; font-weight:800; font-size:14px; color:var(--o2);">Combine two operations into one tool</div>
+          <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">
+            A drill-and-reamer combination does in one entry what normally takes two tools
+            and two changes. The same logic drives the combination profile and form tools.
+          </p>
+        </div>
+      </div>
+
+      <div style="flex:1; border:1px solid var(--line-d); border-radius:9px; padding:14px 16px; display:grid; grid-template-columns:34mm 1fr; gap:16px; align-items:center;">
+        <div>
+          <div class="mono" style="font-size:7.5px; letter-spacing:.18em; color:var(--o2);">PROBLEM 02</div>
+          <div style="margin-top:6px; font-family:'Archivo'; font-weight:800; font-size:12.5px; line-height:1.25;">Chip flow and built-up edge</div>
+        </div>
+        <div>
+          <div style="font-family:'Archivo'; font-weight:800; font-size:14px; color:var(--o2);">Specify flute form and finish together</div>
+          <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">
+            Built-up edge and poor evacuation shorten tool life long before the edge wears
+            out. FP (flute polish) tools address the form and the finish as one decision.
+          </p>
+        </div>
+      </div>
+
+      <div style="flex:1; border:1px solid var(--line-d); border-radius:9px; padding:14px 16px; display:grid; grid-template-columns:34mm 1fr; gap:16px; align-items:center;">
+        <div>
+          <div class="mono" style="font-size:7.5px; letter-spacing:.18em; color:var(--o2);">PROBLEM 03</div>
+          <div style="margin-top:6px; font-family:'Archivo'; font-weight:800; font-size:12.5px; line-height:1.25;">PCD is too expensive for the batch</div>
+        </div>
+        <div>
+          <div style="font-family:'Archivo'; font-weight:800; font-size:14px; color:var(--o2);">Coated carbide on non-ferrous work</div>
+          <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">
+            For small to medium non-ferrous batches, 'N' geometry and coated tools sit
+            between conventional solid carbide and PCD on both life and cost.
+          </p>
+        </div>
+      </div>
+
+      <div style="flex:1; border:1px solid var(--line-d); border-radius:9px; padding:14px 16px; display:grid; grid-template-columns:34mm 1fr; gap:16px; align-items:center;">
+        <div>
+          <div class="mono" style="font-size:7.5px; letter-spacing:.18em; color:var(--o2);">PROBLEM 04</div>
+          <div style="margin-top:6px; font-family:'Archivo'; font-weight:800; font-size:12.5px; line-height:1.25;">Scrapping tools that still have life</div>
+        </div>
+        <div>
+          <div style="font-family:'Archivo'; font-weight:800; font-size:14px; color:var(--o2);">Recondition instead of replace</div>
+          <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">
+            Standard drills and end mills are reground routinely; complex and combination
+            tools usually are not. Re-New returns those to service — see overleaf.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="pnum"><span class="wm"><b>ONKAR AP</b> <span>SIGNAGES</span></span><span>07 — Problems We Solve</span></div>
+</section>
+
+<!-- ════════════ 8 · RE-NEW ════════════ -->
+<section class="page dark">
+  <img class="imgcover ovl" src="/images/tools/mfg-regrinding.jpg" alt="" style="object-position:center 40%;">
+  <div class="ovl" style="background:linear-gradient(180deg,rgba(12,10,7,.94) 42%,rgba(12,10,7,.72) 62%,rgba(12,10,7,.96));"></div>
+  <div class="pad">
+    <div class="kicker">Re-New · Tool Reconditioning</div>
+    <h2 class="sec" style="max-width:150mm;">Extend the life of tooling<br>you <span style="color:var(--o);">already own.</span></h2>
+    <p class="lede" style="color:#d8d2c6; max-width:140mm;">
+      Standard drills and end mills get reground routinely. Complex step, combination and
+      form tools usually get scrapped — because most regrinders cannot restore the
+      geometry. Re-New is built for exactly those tools.
+    </p>
+
+    <div style="margin-top:20px; display:grid; grid-template-columns:repeat(4,1fr); gap:9px;">
+      <div style="border:1px solid var(--line-d); background:rgba(0,0,0,.45); border-radius:9px; padding:13px;">
+        <div class="mono" style="font-size:10px; letter-spacing:.16em; color:var(--o);">01</div>
+        <div style="margin-top:7px; font-family:'Archivo'; font-weight:800; font-size:13px;">Collect</div>
+        <p class="thin" style="margin-top:5px; font-size:9.5px; line-height:1.5; color:#bdb6aa;">Worn tools picked up with your batch.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); background:rgba(0,0,0,.45); border-radius:9px; padding:13px;">
+        <div class="mono" style="font-size:10px; letter-spacing:.16em; color:var(--o);">02</div>
+        <div style="margin-top:7px; font-family:'Archivo'; font-weight:800; font-size:13px;">Assess</div>
+        <p class="thin" style="margin-top:5px; font-size:9.5px; line-height:1.5; color:#bdb6aa;">Wear checked against the original geometry.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); background:rgba(0,0,0,.45); border-radius:9px; padding:13px;">
+        <div class="mono" style="font-size:10px; letter-spacing:.16em; color:var(--o);">03</div>
+        <div style="margin-top:7px; font-family:'Archivo'; font-weight:800; font-size:13px;">Regrind</div>
+        <p class="thin" style="margin-top:5px; font-size:9.5px; line-height:1.5; color:#bdb6aa;">Reground on CNC equipment, including complex forms.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); background:rgba(0,0,0,.45); border-radius:9px; padding:13px;">
+        <div class="mono" style="font-size:10px; letter-spacing:.16em; color:var(--o);">04</div>
+        <div style="margin-top:7px; font-family:'Archivo'; font-weight:800; font-size:13px;">Return</div>
+        <p class="thin" style="margin-top:5px; font-size:9.5px; line-height:1.5; color:#bdb6aa;">Back on the machine instead of into scrap.</p>
+      </div>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:12px; align-items:stretch;">
+      <div class="claim" style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="src">Stated by Aayudh Tools</div>
+        <div class="disp" style="margin-top:8px; font-size:44px; color:#fff;">80–85<span style="font-size:24px;">%</span></div>
+        <p class="thin" style="margin-top:8px; font-size:10.5px; line-height:1.55; color:#e3ded3;">
+          of the life of a fresh tool can be achieved after renewing, as published by the
+          manufacturer.
+        </p>
+      </div>
+      <div style="border:1px solid var(--line-d); background:rgba(0,0,0,.5); border-radius:9px; padding:15px 17px; display:flex; flex-direction:column; justify-content:center;">
+        <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o2);">WHAT THIS MEANS FOR YOU</div>
+        <p class="thin" style="margin-top:9px; font-size:11px; line-height:1.6; color:#d8d2c6;">
+          The actual result depends on the tool and its condition, so we do not quote a
+          figure before seeing it. Send one worn tool as a sample — we will assess it and
+          tell you whether reconditioning is worth it for that item before you commit a
+          batch.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="pnum"><span class="wm"><b>ONKAR AP</b> <span>SIGNAGES</span></span><span>08 — Re-New</span></div>
+</section>
+
+<!-- ════════════ 9 · BEHIND THE TOOLS ════════════ -->
+<section class="page">
+  <div class="halftone-lt ovl" style="opacity:.7;"></div>
+  <div class="pad">
+    <div class="kicker lt">Behind the Tools</div>
+    <h2 class="sec">Manufactured by <span style="color:var(--o);">Aayudh Tools</span></h2>
+    <p class="lede" style="color:#4a443b; max-width:152mm;">
+      We are the distributor — we supply, advise and service. The tools themselves are
+      ground on CNC 6-axis grinding machines with inspection equipment to match. Naming
+      the manufacturer matters: you should know what is behind the tool you are buying.
+    </p>
+
+    <div style="margin-top:16px; display:grid; grid-template-columns:repeat(2,1fr); gap:10px;">
+      <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; overflow:hidden;">
+        <div style="height:38mm;"><img class="imgcover" src="/images/tools/mfg-cnc-grinding.jpg" alt=""></div>
+        <div style="padding:11px 13px;">
+          <div style="font-family:'Archivo'; font-weight:800; font-size:13.5px;">CNC 6-Axis Tool Grinding</div>
+          <p class="thin" style="margin-top:5px; font-size:10px; line-height:1.5; color:#5d564b;">Multi-axis grinding for complex and combination geometries.</p>
+        </div>
+      </div>
+      <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; overflow:hidden;">
+        <div style="height:38mm;"><img class="imgcover" src="/images/tools/mfg-rollomatic-grinding.jpg" alt=""></div>
+        <div style="padding:11px 13px;">
+          <div style="font-family:'Archivo'; font-weight:800; font-size:13.5px;">Precision Flute Grinding</div>
+          <p class="thin" style="margin-top:5px; font-size:10px; line-height:1.5; color:#5d564b;">Flute form and finish ground under coolant.</p>
+        </div>
+      </div>
+      <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; overflow:hidden;">
+        <div style="height:38mm;"><img class="imgcover" src="/images/tools/mfg-walter-inspection.jpg" alt=""></div>
+        <div style="padding:11px 13px;">
+          <div style="font-family:'Archivo'; font-weight:800; font-size:13.5px;">Inspection &amp; Measurement</div>
+          <p class="thin" style="margin-top:5px; font-size:10px; line-height:1.5; color:#5d564b;">Tool geometry verified on dedicated measuring equipment.</p>
+        </div>
+      </div>
+      <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; overflow:hidden;">
+        <div style="height:38mm;"><img class="imgcover" src="/images/tools/mfg-application-engineering.jpg" alt=""></div>
+        <div style="padding:11px 13px;">
+          <div style="font-family:'Archivo'; font-weight:800; font-size:13.5px;">Application Engineering</div>
+          <p class="thin" style="margin-top:5px; font-size:10px; line-height:1.5; color:#5d564b;">Tools designed around the operation, not picked off a size chart.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; padding:14px 17px;">
+      <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o-deep);">HOW THE TWO SIDES SPLIT</div>
+      <div style="margin-top:10px; display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+        <div>
+          <div style="font-family:'Archivo'; font-weight:800; font-size:12.5px;">Aayudh Tools — manufactures</div>
+          <p class="thin" style="margin-top:5px; font-size:10px; line-height:1.55; color:#5d564b;">
+            Tool design, grinding, coating, inspection and the Re-New reconditioning process.
+          </p>
+        </div>
+        <div>
+          <div style="font-family:'Archivo'; font-weight:800; font-size:12.5px;">Onkar AP Signages — supplies you</div>
+          <p class="thin" style="margin-top:5px; font-size:10px; line-height:1.55; color:#5d564b;">
+            Enquiry, application advice, quotation, stock, delivery, reconditioning
+            pick-up and after-sales. Your single point of contact throughout.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pnum"><span class="wm"><b>ONKAR AP</b> <span>SIGNAGES</span></span><span>09 — Behind the Tools</span></div>
+</section>
+
+<!-- ════════════ 10 · APPLICATIONS ════════════ -->
+<section class="page dark">
+  <div class="halftone ovl" style="opacity:.3;"></div>
+  <div class="pad">
+    <div class="kicker">Applications</div>
+    <h2 class="sec">Where this tooling <span style="color:var(--o);">is used.</span></h2>
+
+    <div style="margin-top:18px; display:grid; grid-template-columns:repeat(2,1fr); gap:10px;">
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:14px 16px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:14px; color:var(--o2);">Automotive &amp; Auto Components</div>
+        <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">Volume machining where cycle time and cost per component decide the tooling.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:14px 16px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:14px; color:var(--o2);">General Engineering</div>
+        <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">Job shops and fabricators running mixed batches across materials.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:14px 16px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:14px; color:var(--o2);">Aerospace</div>
+        <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">Named by the manufacturer as a segment served with advanced-material tooling.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:14px 16px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:14px; color:var(--o2);">Medical</div>
+        <p class="thin" style="margin-top:6px; font-size:10.5px; line-height:1.55; color:#c3bcb0;">Named by the manufacturer as a segment served with advanced-material tooling.</p>
+      </div>
+    </div>
+
+    <div class="mono" style="margin-top:22px; font-size:8.5px; letter-spacing:.2em; color:var(--o2);">MATERIALS MACHINED</div>
+    <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:7px;">
+      <span class="chip">Duplex Stainless Steel</span>
+      <span class="chip">Inconel</span>
+      <span class="chip">Titanium</span>
+      <span class="chip">Non-Ferrous Alloys</span>
+      <span class="chip">Alloy &amp; Carbon Steels</span>
+      <span class="chip">Cast Iron</span>
+    </div>
+
+    <div class="mono" style="margin-top:22px; font-size:8.5px; letter-spacing:.2em; color:var(--o2);">WHY BUY THROUGH ONKAR</div>
+    <div style="margin-top:10px; display:grid; grid-template-columns:repeat(3,1fr); gap:9px;">
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:12px 13px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:12px;">One local point of contact</div>
+        <p class="thin" style="margin-top:5px; font-size:9.5px; line-height:1.5; color:#bdb6aa;">Enquiry to reconditioning handled locally, not chased across a supply chain.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:12px 13px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:12px;">Application-led selection</div>
+        <p class="thin" style="margin-top:5px; font-size:9.5px; line-height:1.5; color:#bdb6aa;">We take the component and the operation first, then work back to the tool.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:12px 13px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:12px;">Special tools, not just sizes</div>
+        <p class="thin" style="margin-top:5px; font-size:9.5px; line-height:1.5; color:#bdb6aa;">Direct access to special step, combination and form tool capability.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:12px 13px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:12px;">Reconditioning loop</div>
+        <p class="thin" style="margin-top:5px; font-size:9.5px; line-height:1.5; color:#bdb6aa;">We coordinate the Re-New cycle so worn tools go back into service.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:12px 13px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:12px;">Established manufacturer</div>
+        <p class="thin" style="margin-top:5px; font-size:9.5px; line-height:1.5; color:#bdb6aa;">Over a decade of solid carbide tooling supplied to Indian industry.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:12px 13px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:12px;">Supply continuity</div>
+        <p class="thin" style="margin-top:5px; font-size:9.5px; line-height:1.5; color:#bdb6aa;">Scheduled replenishment against your consumption, from three branches.</p>
+      </div>
+    </div>
+
+    <div class="mono" style="margin-top:22px; font-size:8.5px; letter-spacing:.2em; color:var(--o2);">WHAT WE HANDLE</div>
+    <div style="margin-top:10px; display:grid; grid-template-columns:repeat(5,1fr); gap:8px;">
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:11px 12px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:11px; line-height:1.25;">Special Tool Development</div>
+        <p class="thin" style="margin-top:5px; font-size:9px; line-height:1.5; color:#bdb6aa;">Send a drawing; we manage it from enquiry to first article.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:11px 12px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:11px; line-height:1.25;">Re-New Reconditioning</div>
+        <p class="thin" style="margin-top:5px; font-size:9px; line-height:1.5; color:#bdb6aa;">Including complex and combination tools normally scrapped.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:11px 12px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:11px; line-height:1.25;">Application Engineering</div>
+        <p class="thin" style="margin-top:5px; font-size:9px; line-height:1.5; color:#bdb6aa;">Selection worked against material, machine and cycle time.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:11px 12px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:11px; line-height:1.25;">Tool Cost Optimisation</div>
+        <p class="thin" style="margin-top:5px; font-size:9px; line-height:1.5; color:#bdb6aa;">Reviewing cost per component, not cost per tool.</p>
+      </div>
+      <div style="border:1px solid var(--line-d); border-radius:9px; padding:11px 12px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:11px; line-height:1.25;">Stock &amp; Supply</div>
+        <p class="thin" style="margin-top:5px; font-size:9px; line-height:1.5; color:#bdb6aa;">Scheduled supply so a running line does not wait on tooling.</p>
+      </div>
+    </div>
+
+    <div style="flex:1;"></div>
+  </div>
+  <div class="pnum"><span class="wm"><b>ONKAR AP</b> <span>SIGNAGES</span></span><span>10 — Applications</span></div>
+</section>
+
+<!-- ════════════ 11 · HOW TO ENQUIRE ════════════ -->
+<section class="page">
+  <div class="halftone-lt ovl" style="opacity:.7;"></div>
+  <div class="pad">
+    <div class="kicker lt">How to Enquire</div>
+    <h2 class="sec" style="max-width:150mm;">Send the component,<br>not just the <span style="color:var(--o);">tool size.</span></h2>
+    <p class="lede" style="color:#4a443b; max-width:152mm;">
+      The fastest route to the right tool — and the right price — is the drawing and the
+      material. With those we can recommend rather than guess.
+    </p>
+
+    <div style="margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+      <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; padding:15px 17px;">
+        <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o-deep);">SEND US THIS</div>
+        <div style="margin-top:11px; display:flex; flex-direction:column; gap:9px;">
+          <div><div style="font-family:'Archivo'; font-weight:800; font-size:11.5px;">Component drawing or sample</div><div class="thin" style="font-size:9.5px; color:#6a6256; margin-top:2px;">The single most useful thing you can send.</div></div>
+          <div class="rule"></div>
+          <div><div style="font-family:'Archivo'; font-weight:800; font-size:11.5px;">Material being machined</div><div class="thin" style="font-size:9.5px; color:#6a6256; margin-top:2px;">Grade matters as much as the family.</div></div>
+          <div class="rule"></div>
+          <div><div style="font-family:'Archivo'; font-weight:800; font-size:11.5px;">Operation &amp; machine</div><div class="thin" style="font-size:9.5px; color:#6a6256; margin-top:2px;">Drilling, reaming, milling — and what it runs on.</div></div>
+          <div class="rule"></div>
+          <div><div style="font-family:'Archivo'; font-weight:800; font-size:11.5px;">Quantity or monthly consumption</div><div class="thin" style="font-size:9.5px; color:#6a6256; margin-top:2px;">Lets us structure pricing and replenishment.</div></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--p-line); background:var(--paper2); border-radius:9px; padding:15px 17px;">
+        <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o-deep);">WHAT HAPPENS NEXT</div>
+        <div style="margin-top:11px; display:flex; flex-direction:column; gap:11px;">
+          <div style="display:flex; gap:11px;">
+            <div class="mono" style="font-size:11px; color:var(--o); font-weight:500;">01</div>
+            <div><div style="font-family:'Archivo'; font-weight:800; font-size:11.5px;">We review the application</div><div class="thin" style="font-size:9.5px; color:#6a6256; margin-top:2px;">Material, operation, machine and cycle considered together.</div></div>
+          </div>
+          <div style="display:flex; gap:11px;">
+            <div class="mono" style="font-size:11px; color:var(--o); font-weight:500;">02</div>
+            <div><div style="font-family:'Archivo'; font-weight:800; font-size:11.5px;">You get a recommendation</div><div class="thin" style="font-size:9.5px; color:#6a6256; margin-top:2px;">Standard tool where it fits, special where it does not.</div></div>
+          </div>
+          <div style="display:flex; gap:11px;">
+            <div class="mono" style="font-size:11px; color:var(--o); font-weight:500;">03</div>
+            <div><div style="font-family:'Archivo'; font-weight:800; font-size:11.5px;">Quotation and lead time</div><div class="thin" style="font-size:9.5px; color:#6a6256; margin-top:2px;">Priced against the drawing, with a committed date.</div></div>
+          </div>
+          <div style="display:flex; gap:11px;">
+            <div class="mono" style="font-size:11px; color:var(--o); font-weight:500;">04</div>
+            <div><div style="font-family:'Archivo'; font-weight:800; font-size:11.5px;">Supply and support</div><div class="thin" style="font-size:9.5px; color:#6a6256; margin-top:2px;">Delivery, replenishment and the reconditioning loop.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div style="border:1px solid var(--p-line); border-radius:9px; overflow:hidden; height:44mm;">
+      <img class="imgcover" src="/images/tools/mfg-application-engineering.jpg" alt="">
+    </div>
+  </div>
+  <div class="pnum"><span class="wm"><b>ONKAR AP</b> <span>SIGNAGES</span></span><span>11 — How to Enquire</span></div>
+</section>
+
+<!-- ════════════ 12 · CONTACT ════════════ -->
+<section class="page dark">
+  <div class="halftone ovl" style="opacity:.3;"></div>
+  <div class="cmyk ovl" style="height:5px;"></div>
+  <div class="pad">
+    <div class="kicker">Contact</div>
+    <h2 class="sec" style="max-width:150mm;">Discuss your next<br>tooling <span style="color:var(--o);">requirement.</span></h2>
+    <p class="lede" style="color:#cfc8bc; max-width:140mm;">
+      Talk to us directly — we handle the enquiry, the quotation and the service in your
+      region.
+    </p>
+
+    <div style="margin-top:24px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div style="border:1px solid var(--line-d); background:rgba(255,255,255,.035); border-radius:10px; padding:18px 20px;">
+        <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o);">CALL / WHATSAPP</div>
+        <div class="disp" style="margin-top:9px; font-size:27px; color:#fff; letter-spacing:-.01em;">+91 96896 76416</div>
+        <div class="thin" style="margin-top:7px; font-size:10.5px; color:#bdb6aa;">Send a drawing or a photo of the tool on WhatsApp.</div>
+      </div>
+      <div style="border:1px solid var(--line-d); background:rgba(255,255,255,.035); border-radius:10px; padding:18px 20px;">
+        <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o);">EMAIL</div>
+        <div class="disp" style="margin-top:9px; font-size:20px; color:#fff; letter-spacing:-.01em;">onkarsignages@gmail.com</div>
+        <div class="thin" style="margin-top:7px; font-size:10.5px; color:#bdb6aa;">Attach the component drawing for a faster quotation.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; border:1px solid var(--line-d); background:rgba(255,255,255,.035); border-radius:10px; padding:18px 20px;">
+      <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o);">REGISTERED OFFICE</div>
+      <div style="margin-top:9px; font-family:'Archivo'; font-weight:800; font-size:15px; color:#fff;">Onkarap Signages Pvt. Ltd.</div>
+      <p class="thin" style="margin-top:6px; font-size:11px; line-height:1.6; color:#c9c2b6; max-width:130mm;">
+        Godown No. 03, Sr. No. 320, opp. Jog Maharaja Garden, near PCMC Swimming Pool,
+        Pimpri Gaon, Pimpri Colony, Pimpri-Chinchwad, Pune, Maharashtra 411017
+      </p>
+      <div style="margin-top:12px; display:flex; gap:26px; flex-wrap:wrap;">
+        <div><div class="mono" style="font-size:8px; letter-spacing:.18em; color:var(--muted);">BRANCHES</div><div style="margin-top:4px; font-size:12px; font-weight:600; color:#fff;">PCMC · Pune · Satara</div></div>
+        <div><div class="mono" style="font-size:8px; letter-spacing:.18em; color:var(--muted);">GSTIN</div><div class="mono" style="margin-top:4px; font-size:12px; color:#fff;">27AAEC07938E1Z7</div></div>
+        <div><div class="mono" style="font-size:8px; letter-spacing:.18em; color:var(--muted);">WEB</div><div style="margin-top:4px; font-size:12px; font-weight:600; color:#fff;">onkarsinages.com/cutting-tools</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; border:1px solid var(--line-d); background:rgba(255,255,255,.02); border-radius:10px; padding:16px 20px;">
+      <div class="mono" style="font-size:8px; letter-spacing:.2em; color:var(--o);">ALSO FROM ONKAR</div>
+      <div style="margin-top:9px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div>
+          <div style="font-family:'Archivo'; font-weight:800; font-size:13px; color:#fff;">Advertising &amp; Signage Media</div>
+          <p class="thin" style="margin-top:5px; font-size:10px; line-height:1.55; color:#bdb6aa;">
+            Flex, vinyl, inks, lamination and ACP — plus large-format printing, signage
+            fabrication, installation and maintenance.
+          </p>
+        </div>
+        <div>
+          <div style="font-family:'Archivo'; font-weight:800; font-size:13px; color:#fff;">Useful if you also need</div>
+          <p class="thin" style="margin-top:5px; font-size:10px; line-height:1.55; color:#bdb6aa;">
+            Plant and safety signage, wayfinding, shop-floor markings, exhibition stalls
+            or vehicle and fleet branding — same company, same point of contact.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div class="rule d"></div>
+    <div style="margin-top:16px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <div class="wm" style="font-size:22px;"><b>ONKAR AP</b> <span>SIGNAGES</span></div>
+        <div class="mono" style="margin-top:7px; font-size:8px; letter-spacing:.18em; color:var(--muted);">DIVISION 01 — ADVERTISING &amp; SIGNAGE MEDIA</div>
+        <div class="mono" style="margin-top:3px; font-size:8px; letter-spacing:.18em; color:var(--o2);">DIVISION 02 — INDUSTRIAL CUTTING TOOLS</div>
+      </div>
+      <div style="text-align:right;">
+        <div class="mono" style="font-size:8px; letter-spacing:.18em; color:var(--muted);">AUTHORISED DISTRIBUTOR</div>
+        <div style="margin-top:4px; font-family:'Archivo'; font-weight:800; font-size:15px; color:#fff;">Aayudh Tools</div>
+      </div>
+    </div>
+  </div>
+  <div class="pnum"><span>onkarsinages.com</span><span>12 — Contact</span></div>
+</section>
+
+</body>
+</html>
