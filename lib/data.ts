@@ -439,16 +439,159 @@ export const PROCESS = [
   { step: "08", name: "Maintenance", desc: "Scheduled upkeep keeps assets campaign-ready.", icon: "wrench" },
 ];
 
-export const SHOWCASE = [
-  { title: "Event Stages & Backdrops", category: "Exhibition & Events", src: "/images/work/banner1.jpg" },
-  { title: "Exhibition Stalls", category: "Events & Expos", src: "/images/work/banner3.jpg" },
-  { title: "Glass & Office Branding", category: "Corporate Branding", src: "/images/work/glass-branding.jpg" },
-  { title: "Wall Coverings & Decals", category: "Interior Branding", src: "/images/work/wall-decals.jpg" },
-  { title: "Canvas & Corporate Displays", category: "Corporate Displays", src: "/images/work/big-bold-printing.jpg" },
-  { title: "Glow & Backlit Signage", category: "Signage", src: "/images/work/vehicle-branding.jpg" },
-  { title: "Vehicle Branding", category: "Fleet Graphics", src: "/images/work/banner2.jpg" },
-  { title: "Signage & Wayfinding", category: "Wayfinding Systems", src: "/images/applications/wayfinding.jpg" },
+export type WorkItem = {
+  /** Stable id — also the sort/dedupe key shared with the print catalogue. */
+  id: string;
+  /** Short label shown as the card eyebrow. */
+  category: string;
+  /** Headline shown on the card. */
+  title: string;
+  src: string;
+  /** Written for screen readers — describes the photo, never the filename. */
+  alt: string;
+  /** Lets a card claim extra grid area in the showcase mosaic. */
+  feature?: boolean;
+};
+
+// ===== Work portfolio — SINGLE SOURCE OF TRUTH =====
+// These entries mirror the printed Corporate Profile (public/booklet.html) so
+// the website and the PDF can never drift apart. Titles/categories are the
+// owner-approved labels already used in print — do not invent new ones here.
+//
+// EXCLUDED ON PURPOSE (left untracked in /public, not published as our work
+// and deliberately NOT committed — both are third-party imagery we hold no
+// confirmed rights to):
+//   vehicle-sprite.jpg          — London Routemaster (reg. LT413, Trafalgar
+//                                 Square). Foreign stock photo, not our work.
+//   vehicle-mumbai-indians.jpg  — carries a MumbaiIndians.com press watermark;
+//                                 provenance unconfirmed.
+// Re-include either one ONLY after the owner confirms we executed the job.
+export const WORK: WorkItem[] = [
+  {
+    id: "skf-bus",
+    category: "Bus & Coach",
+    title: "Full bus wraps · SKF",
+    src: "/images/work/skf-bus.jpg",
+    alt: "Staff coach fully wrapped in SKF corporate livery, printed and applied on site.",
+    feature: true,
+  },
+  {
+    id: "vehicle-bjp",
+    category: "Campaign",
+    title: "Political campaign vehicle",
+    src: "/images/work/vehicle-bjp.jpg",
+    alt: "Campaign vehicle wrapped in party branding for a political outreach drive.",
+  },
+  {
+    id: "vehicle-ladkibahin",
+    category: "Govt. Outreach",
+    title: "Scheme awareness fleet",
+    src: "/images/work/vehicle-ladkibahin.jpg",
+    alt: "Government scheme awareness vehicle branded for a public outreach fleet.",
+  },
+  {
+    id: "vehicle-casino",
+    category: "Transit",
+    title: "Full transit bus wrap",
+    src: "/images/work/vehicle-casino.jpg",
+    alt: "City transit bus carrying a full-body printed vinyl wrap.",
+  },
+  {
+    id: "vehicle-force",
+    category: "Sports Fleet",
+    title: "Puneri Paltan team van",
+    src: "/images/work/vehicle-force.jpg",
+    alt: "Puneri Paltan team van finished in full sports-fleet graphics.",
+  },
+  {
+    id: "vehicle-tsi",
+    category: "Motorsport",
+    title: "Race car livery · TSI",
+    src: "/images/work/vehicle-tsi.jpg",
+    alt: "Race car finished in a TSI motorsport livery applied in cast vinyl.",
+  },
+  {
+    id: "wayfinding-tri",
+    category: "Pylon & Monolith",
+    title: "Brand pylon signage",
+    src: "/images/work/wayfinding-tri.jpg",
+    alt: "Free-standing brand pylon signage installed at a facility entrance.",
+    feature: true,
+  },
+  {
+    id: "wayfinding-piller",
+    category: "Directional",
+    title: "Plant wayfinding",
+    src: "/images/work/wayfinding-piller.jpg",
+    alt: "Directional wayfinding markers guiding movement across an industrial plant.",
+  },
+  {
+    id: "wayfinding-resort",
+    category: "Campus & Resort",
+    title: "Facility signage",
+    src: "/images/work/wayfinding-resort.jpg",
+    alt: "Campus and resort facility signage set installed across a landscaped property.",
+  },
+  {
+    id: "exhibition-southco-stall",
+    category: "Exhibitions",
+    title: "Stall fabrication & branding",
+    src: "/images/work/exhibition-southco-stall.jpg",
+    alt: "Exhibition stall fabricated and branded for a trade show floor.",
+  },
+  {
+    id: "exhibition-industrial",
+    category: "Exhibitions",
+    title: "Industrial expo stalls",
+    src: "/images/work/exhibition-industrial.jpg",
+    alt: "Industrial expo stall built out with printed panels and display graphics.",
+  },
+  {
+    id: "corporate-reception",
+    category: "Reception",
+    title: "Reception & lobby branding",
+    src: "/images/work/corporate-reception.jpg",
+    alt: "Corporate reception wall carrying dimensional logo and lobby branding.",
+  },
+  {
+    id: "corporate-interior",
+    category: "Corporate",
+    title: "Corporate interior displays",
+    src: "/images/work/corporate-interior.jpg",
+    alt: "Corporate interior fitted with printed display panels and wall graphics.",
+  },
+  {
+    id: "wall-skoda",
+    category: "Wall Graphics",
+    title: "Heritage & campus walls",
+    src: "/images/work/wall-skoda.jpg",
+    alt: "Large-format wall graphics applied across a heritage campus elevation.",
+  },
+  {
+    id: "floor-decals",
+    category: "Floor & Ceiling",
+    title: "Covering decals",
+    src: "/images/work/floor-decals.jpg",
+    alt: "Floor and ceiling covering decals laid across a retail circulation area.",
+  },
+  {
+    id: "glass-branding",
+    category: "Corporate Branding",
+    title: "Glass & office branding",
+    src: "/images/work/glass-branding.jpg",
+    alt: "Frosted and printed glass branding applied to an office partition.",
+  },
 ];
+
+/**
+ * @deprecated Use {@link WORK}. Retained so any older import keeps compiling;
+ * it is now derived from WORK rather than being a second hand-maintained list.
+ */
+export const SHOWCASE = WORK.map((w) => ({
+  title: w.title,
+  category: w.category,
+  src: w.src,
+}));
 
 export const FAQS = [
   {

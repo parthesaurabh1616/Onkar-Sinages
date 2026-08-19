@@ -9,6 +9,4 @@ npm-debug.log*
 !.env.example
 .vercel
 next-env.d.ts
-.tsbuildinfo
-public/deck.html
-public/booklet.html
+*.tsbuildinfo

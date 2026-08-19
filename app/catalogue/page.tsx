@@ -61,7 +61,7 @@ export default function CataloguePage() {
               </div>
               <div>
                 <h2 className="text-lg font-bold text-white">Download Catalogue</h2>
-                <p className="text-xs text-muted">PDF · ~6 MB · Updated 2026</p>
+                <p className="text-xs text-muted">PDF · 23 pages · 6.6 MB</p>
               </div>
             </div>
             <div className="mt-6">
