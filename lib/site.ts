@@ -3,7 +3,7 @@ export const SITE = {
   legalName: "Onkarap Signages Pvt. Ltd.",
   tagline: "Signage Media & Advertising Material Leader",
   description:
-    "Onkar AP Signages is a Maharashtra-based supplier of advertising and signage materials — flex, vinyl, inks, lamination and ACP — with branches at PCMC, Pune and Satara. Bulk stock, fast dispatch.",
+    "Onkar AP Signages is a Maharashtra-based supplier across two divisions — advertising and signage materials (flex, vinyl, inks, lamination, ACP) and industrial cutting tools as authorised distributor for Aayudh Tools. Branches at PCMC, Pune and Satara.",
   url: "https://www.onkarsinages.com",
   linkedin: "https://www.linkedin.com/in/onkar-signages/",
   phoneDisplay: "+91 96896 76416",
@@ -21,6 +21,46 @@ export const SITE = {
   branches: ["PCMC", "Pune", "Satara"],
   established: 2019,
 };
+
+/**
+ * The company runs two distinct businesses with two distinct audiences: a brand
+ * or agency buying print media, and a plant buying cutting tools. They get
+ * separate routes and separate navigation rather than one mixed page.
+ */
+export const DIVISIONS = [
+  {
+    id: "media",
+    number: "01",
+    name: "Advertising & Signage",
+    short: "Signage Media",
+    href: "/",
+    tagline: "Material supply, printing, branding, signage and installation.",
+    audience: "Brands · Agencies · Retail · Events",
+    icon: "printer",
+  },
+  {
+    id: "tools",
+    number: "02",
+    name: "Industrial Cutting Tools",
+    short: "Cutting Tools",
+    href: "/cutting-tools",
+    tagline: "Solid carbide, HSS and brazed tooling — authorised distributor for Aayudh Tools.",
+    audience: "Manufacturing · CNC Job Shops · Auto Components",
+    icon: "tools",
+  },
+] as const;
+
+export type DivisionId = (typeof DIVISIONS)[number]["id"];
+
+/** In-page navigation for the cutting tools division. */
+export const TOOLS_NAV_LINKS = [
+  { label: "Range", href: "#range" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Re-New", href: "#re-new" },
+  { label: "Manufacturing", href: "#manufacturing" },
+  { label: "Industries", href: "#industries" },
+  { label: "Enquiry", href: "#enquiry" },
+] as const;
 
 export const NAV_LINKS = [
   { label: "Services", href: "#services" },

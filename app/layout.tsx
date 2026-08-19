@@ -137,6 +137,16 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/*
+          Scroll-reveal animations ship their initial state as inline
+          `opacity:0`, so without JS the page renders blank. This restores
+          the final state for no-JS visitors and crawlers that do not
+          execute scripts.
+        */}
+        <noscript>
+          <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important}
+img{opacity:1!important}`}</style>
+        </noscript>
         <ScrollProgress />
         <SmoothScroll>{children}</SmoothScroll>
       </body>

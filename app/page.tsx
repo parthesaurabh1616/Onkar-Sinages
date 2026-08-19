@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { Hero } from "@/components/sections/Hero";
+import { Divisions } from "@/components/sections/Divisions";
 import { TrustedBy } from "@/components/sections/TrustedBy";
 import { Ecosystem } from "@/components/sections/Ecosystem";
 import { Services } from "@/components/sections/Services";
@@ -21,6 +22,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Divisions />
         <TrustedBy />
         <Ecosystem />
         <Services />

@@ -6,6 +6,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: SITE.url, lastModified: now, changeFrequency: "weekly", priority: 1 },
     {
+      url: `${SITE.url}/cutting-tools`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${SITE.url}/catalogue`,
       lastModified: now,
       changeFrequency: "monthly",

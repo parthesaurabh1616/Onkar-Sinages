@@ -1,6 +1,6 @@
 "use client";
 
-import { SITE, NAV_LINKS } from "@/lib/site";
+import { SITE, NAV_LINKS, DIVISIONS } from "@/lib/site";
 import { PRODUCTS } from "@/lib/data";
 import { Logo, Wordmark } from "@/components/ui/Logo";
 import { Icon } from "@/components/ui/Icon";
@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <footer className="relative border-t border-white/10 bg-secondary">
       <div className="container-px py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr]">
           <div>
             <a href="#top" className="flex items-center gap-3">
               <Logo className="h-10 w-10" />
@@ -68,9 +68,23 @@ export function Footer() {
             ))}
           </FooterCol>
 
-          <FooterCol title="Products">
-            {PRODUCTS.slice(0, 6).map((p) => (
-              <a key={p.slug} href="#products" className="footer-link">
+          <FooterCol title="Divisions">
+            {DIVISIONS.map((d) => (
+              <a key={d.id} href={d.href} className="footer-link">
+                {d.name}
+              </a>
+            ))}
+            <a href="/cutting-tools#re-new" className="footer-link">
+              Re-New Reconditioning
+            </a>
+            <a href="/cutting-tools#range" className="footer-link">
+              Solid Carbide Tools
+            </a>
+          </FooterCol>
+
+          <FooterCol title="Materials">
+            {PRODUCTS.slice(0, 5).map((p) => (
+              <a key={p.slug} href="/#products" className="footer-link">
                 {p.name}
               </a>
             ))}
