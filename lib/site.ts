@@ -54,6 +54,7 @@ export type DivisionId = (typeof DIVISIONS)[number]["id"];
 
 /** In-page navigation for the cutting tools division. */
 export const TOOLS_NAV_LINKS = [
+  { label: "About", href: "#about" },
   { label: "Range", href: "#range" },
   { label: "Solutions", href: "#solutions" },
   { label: "Re-New", href: "#re-new" },

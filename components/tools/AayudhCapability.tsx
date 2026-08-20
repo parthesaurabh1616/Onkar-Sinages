@@ -72,17 +72,20 @@ export function AayudhCapability() {
               {DISTRIBUTOR_ROLE.long}
             </p>
             <p className="mt-4 text-sm text-paper-muted">
-              Tools are ground at {AAYUDH.brand}&apos;s plant —{" "}
+              Tools are ground at {AAYUDH.legalName}&apos;s plant —{" "}
               <span className="font-medium text-paper-ink">{AAYUDH.plant}</span>.
             </p>
+            {/*
+              No outbound link to the manufacturer. We name them for
+              transparency, but enquiries are ours to handle — the same reason
+              no Aayudh contact route appears in the printed catalogue.
+            */}
             <a
-              href={AAYUDH.website}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#enquiry"
               className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:text-orange-deep"
             >
-              Visit {AAYUDH.brand}
-              <Icon name="arrow" className="h-4 w-4 -rotate-45" />
+              Send us your requirement
+              <Icon name="arrow" className="h-4 w-4" />
             </a>
           </div>
 

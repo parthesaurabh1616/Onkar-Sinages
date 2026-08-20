@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { ToolsHero } from "@/components/tools/ToolsHero";
+import { ToolsIntro } from "@/components/tools/ToolsIntro";
 import { ToolsRange } from "@/components/tools/ToolsRange";
 import { ToolsSolutions } from "@/components/tools/ToolsSolutions";
 import { ReNew } from "@/components/tools/ReNew";
@@ -125,6 +126,7 @@ export default function CuttingToolsPage() {
       />
       <main>
         <ToolsHero />
+        <ToolsIntro />
         <ToolsRange />
         <ToolsSolutions />
         <ReNew />

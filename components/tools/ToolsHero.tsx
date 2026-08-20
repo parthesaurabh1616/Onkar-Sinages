@@ -45,7 +45,7 @@ export function ToolsHero() {
             authorised distributor of cutting tools — solid carbide, HSS, brazed
             and special tooling supplied to automotive, general engineering, oil
             and gas and other manufacturing industries through our branches.
-            Manufactured by {AAYUDH.brand}.
+            Manufactured by {AAYUDH.brand} ({AAYUDH.legalName}).
           </motion.p>
 
           {/* The four families, stated plainly for a scanning purchase manager. */}

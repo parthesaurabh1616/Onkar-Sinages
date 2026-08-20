@@ -27,7 +27,10 @@
 
 /** The principal we distribute for. Kept separate from SITE (that is Onkar). */
 export const AAYUDH = {
+  /** Trading name, as it appears on the brochure and the tools themselves. */
   brand: "Aayudh Tools",
+  /** Registered entity we hold the distributorship with. Use in formal statements. */
+  legalName: "Aayudh Synergies Pvt. Ltd.",
   tagline: "Expect more from us",
   positioning: "Technology | Innovation | Precision",
   promise: "Total solutions in solid carbide, brazed & HSS",
@@ -44,21 +47,30 @@ export const AAYUDH = {
 export const DISTRIBUTOR_ROLE = {
   short: "Authorised distributor of cutting tools",
   /** One line for tight spaces where the manufacturer must still be named. */
-  withPrincipal: "Authorised distributor of cutting tools — manufactured by Aayudh Tools",
-  long: "Onkar AP Signages is a trading company. Our cutting tools division is an authorised distributor supplying solid carbide, HSS, brazed and special tooling to automotive, general engineering and other manufacturing industries through our branches at PCMC, Pune and Satara. We hold stock, handle application enquiries, and coordinate special-tool development and reconditioning with the manufacturer, Aayudh Tools.",
+  withPrincipal: "Authorised distributor for Aayudh Synergies Pvt. Ltd.",
+  long: "Onkarap Signages Pvt. Ltd. is a trading company. Our cutting tools division is an authorised distributor for Aayudh Synergies Pvt. Ltd., supplying cutting tools — solid carbide, HSS, brazed and special tooling — to the automotive, general engineering, oil and gas and other manufacturing industries as per client requirement, through our branches at Pune, PCMC and Satara. We handle application enquiries and coordinate supply, special-tool development and reconditioning with the manufacturer.",
 } as const;
 
 /**
  * What the business actually is. Stated plainly because a plant buying tooling
  * should know it is buying from a trading and distribution company, not from
  * the works that grinds the tools.
+ *
+ * `intro` is the owner's own company statement — treat the facts in it as
+ * authoritative and do not embellish them. Note "have now started": the tools
+ * business is new, so avoid copy that implies a long track record in tooling
+ * or a deep tooling inventory we have not confirmed.
  */
 export const COMPANY_MODEL = {
-  type: "Trading & distribution company",
+  type: "Trading company",
   since: 2019,
-  summary:
-    "A trading company supplying industry across Maharashtra since 2019 — advertising and signage material through Division 01, and industrial cutting tools through Division 02.",
-  reach: "Supplied through our branches at PCMC, Pune and Satara.",
+  yearsInMarket: 7,
+  branches: "Pune · PCMC · Satara",
+  intro:
+    "Onkarap Signages Pvt. Ltd. is a trading company with three branches across Pune, PCMC and Satara. We have been associated with the market for the last seven years, supplying every kind of advertising and signage material within Maharashtra. We have now started an additional business in industrial carbide tools — as authorised distributors for Aayudh Synergies Pvt. Ltd., we supply cutting tools, solid carbide, HSS, brazed and special tooling to the automotive, general engineering, oil and gas and other manufacturing industries, as per client requirement.",
+  /** Condensed to a single line for tight spaces. */
+  introShort:
+    "A trading company of seven years' standing, supplying advertising and signage material across Maharashtra — and now industrial carbide tools as authorised distributors for Aayudh Synergies Pvt. Ltd.",
 } as const;
 
 // ============================================================================
@@ -402,8 +414,8 @@ export const TOOL_SERVICES = [
   },
   {
     slug: "stock-supply",
-    name: "Stock & Supply",
-    desc: "Distributor stock and scheduled supply so a running line does not wait on tooling.",
+    name: "Supply & Replenishment",
+    desc: "Scheduled supply coordinated against your consumption so a running line does not wait on tooling.",
     icon: "boxes",
   },
 ] as const;
@@ -526,7 +538,7 @@ export const TOOL_WHY_US = [
   },
   {
     title: "Supply Continuity",
-    desc: "Distributor stock and scheduled replenishment against your consumption.",
+    desc: "Scheduled replenishment planned against your consumption, served from three branches.",
     icon: "truck",
   },
 ] as const;
