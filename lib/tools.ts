@@ -439,7 +439,20 @@ export const TOOL_MATERIALS = [
   "Cast Iron",
 ] as const;
 
+/**
+ * Two different kinds of evidence sit in this list, and the wording keeps them
+ * apart on purpose:
+ *  - Aerospace and Medical are named in Aayudh's own published material.
+ *  - Oil & Gas, Automotive and General Engineering are segments we serve
+ *    directly and are stated on our own account, not the manufacturer's.
+ * Keep that distinction if you edit these entries.
+ */
 export const TOOL_INDUSTRIES = [
+  {
+    name: "Oil & Gas",
+    desc: "Equipment and component manufacturing in corrosion-resistant and high-strength alloys — the duplex, Inconel and titanium work this range is built for.",
+    icon: "droplet",
+  },
   {
     name: "Automotive & Auto Components",
     desc: "Volume machining where cycle time and cost per component decide the tooling.",

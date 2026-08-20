@@ -16,7 +16,7 @@ import { ToolsContact } from "@/components/tools/ToolsContact";
 const TITLE =
   "Industrial Cutting Tools — Solid Carbide, HSS & Brazed | Aayudh Tools Distributor";
 const DESCRIPTION =
-  "Solid carbide, HSS and brazed cutting tools plus special step, combination and form tools — supplied by Onkar AP Signages as authorised distributor for Aayudh Tools. Re-New tool reconditioning and application engineering across Maharashtra.";
+  "Solid carbide, HSS and brazed cutting tools plus special step, combination and form tools — supplied by Onkar AP Signages as authorised distributor for Aayudh Tools. Serving oil and gas, automotive and general engineering manufacturing, with Re-New tool reconditioning and application engineering across Maharashtra.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -34,6 +34,10 @@ export const metadata: Metadata = {
     "tool reconditioning",
     "tool regrinding Pune",
     "cutting tools Maharashtra",
+    "oil and gas cutting tools",
+    "oil and gas machining tools India",
+    "tooling for duplex stainless steel",
+    "Inconel machining tools",
   ],
   alternates: { canonical: "/cutting-tools" },
   openGraph: {

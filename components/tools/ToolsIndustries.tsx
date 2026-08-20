@@ -19,28 +19,56 @@ export function ToolsIndustries() {
         <SectionHeading
           eyebrow="Applications"
           title="Where this tooling is used"
-          description="Aerospace and medical are named in Aayudh's material as segments served; automotive and general engineering are the day-to-day volume."
+          description="Oil and gas, automotive and general engineering are where we supply day to day. Aerospace and medical are named in Aayudh's own material as segments served."
         />
 
+        {/*
+          The first entry runs full width as the lead segment; the rest sit in a
+          row of four beneath it. Five equal columns would crowd the titles and
+          would not show which segment we actually lead with.
+        */}
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {TOOL_INDUSTRIES.map((ind, i) => (
-            <motion.div
-              key={ind.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: i * 0.06 }}
-              className="rounded-3xl border border-surface-border bg-surface-raised/60 p-6"
-            >
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10 text-highlight">
-                <Icon name={ind.icon} className="h-5 w-5" />
-              </span>
-              <h3 className="mt-4 font-display text-lg font-bold text-white">
-                {ind.name}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{ind.desc}</p>
-            </motion.div>
-          ))}
+          {TOOL_INDUSTRIES.map((ind, i) => {
+            const lead = i === 0;
+            return (
+              <motion.div
+                key={ind.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.06 }}
+                className={
+                  lead
+                    ? "rounded-3xl border border-accent/30 bg-accent/[0.07] p-6 sm:col-span-2 lg:col-span-4"
+                    : "rounded-3xl border border-surface-border bg-surface-raised/60 p-6"
+                }
+              >
+                <span
+                  className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-highlight ${
+                    lead
+                      ? "border-accent/40 bg-accent/15"
+                      : "border-accent/20 bg-accent/10"
+                  }`}
+                >
+                  <Icon name={ind.icon} className="h-5 w-5" />
+                </span>
+                <h3
+                  className={`mt-4 font-display font-bold text-white ${
+                    lead ? "text-2xl" : "text-lg"
+                  }`}
+                >
+                  {ind.name}
+                </h3>
+                <p
+                  className={`mt-2 text-sm leading-relaxed text-muted ${
+                    lead ? "max-w-3xl" : ""
+                  }`}
+                >
+                  {ind.desc}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* --- Materials -------------------------------------------------- */}
@@ -59,8 +87,10 @@ export function ToolsIndustries() {
             ))}
           </ul>
           <p className="mt-5 text-xs leading-relaxed text-muted/80">
-            Tooling is selected against the material and the operation. Tell us
-            what you are cutting and we will come back with a recommendation.
+            Tooling is selected against the material and the operation — the
+            corrosion-resistant and high-strength alloys that dominate oil and gas
+            work are the same ones this range is built around. Tell us what you are
+            cutting and we will come back with a recommendation.
           </p>
         </div>
 
