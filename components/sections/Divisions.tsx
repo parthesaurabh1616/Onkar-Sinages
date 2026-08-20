@@ -30,7 +30,11 @@ const CARDS = [
     image: "/images/tools/hero-carbide-tools.jpg",
     imageAlt:
       "Group of solid carbide cutting tools including coated step drills and a form cutter.",
-    points: ["Solid Carbide · HSS · Brazed", "Special & Form Tools", "Re-New Reconditioning"],
+    points: [
+      "Solid Carbide · HSS · Brazed",
+      "Special & Form Tools",
+      "Supplied across industry from 3 branches",
+    ],
     cta: "Explore Cutting Tools",
     isCurrent: false,
   },
@@ -48,7 +52,7 @@ export function Divisions() {
         <SectionHeading
           eyebrow="Two Divisions"
           title="One company, two supply businesses"
-          description="Onkar AP Signages supplies the advertising industry with print and signage material — and now supplies manufacturing plants with industrial cutting tools as authorised distributor for Aayudh Tools."
+          description="Onkar AP Signages is a trading company. We supply the advertising industry with print and signage material, and now supply manufacturing plants with industrial cutting tools as an authorised distributor."
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2">

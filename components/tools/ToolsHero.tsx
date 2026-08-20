@@ -41,9 +41,11 @@ export function ToolsHero() {
             transition={{ duration: 0.65, delay: 0.12 }}
             className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg"
           >
-            Solid carbide, HSS and brazed tooling — plus special step, combination
-            and form tools ground to drawing. Supplied and supported locally as
-            authorised distributor for {AAYUDH.brand}.
+            Onkar AP Signages is a trading company, and this division is an
+            authorised distributor of cutting tools — solid carbide, HSS, brazed
+            and special tooling supplied to automotive, general engineering, oil
+            and gas and other manufacturing industries through our branches.
+            Manufactured by {AAYUDH.brand}.
           </motion.p>
 
           {/* The four families, stated plainly for a scanning purchase manager. */}

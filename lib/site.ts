@@ -3,7 +3,7 @@ export const SITE = {
   legalName: "Onkarap Signages Pvt. Ltd.",
   tagline: "Signage Media & Advertising Material Leader",
   description:
-    "Onkar AP Signages is a Maharashtra-based supplier across two divisions — advertising and signage materials (flex, vinyl, inks, lamination, ACP) and industrial cutting tools as authorised distributor for Aayudh Tools. Branches at PCMC, Pune and Satara.",
+    "Onkar AP Signages is a Maharashtra-based trading company operating two divisions — advertising and signage materials (flex, vinyl, inks, lamination, ACP), and industrial cutting tools as an authorised distributor supplying automotive, general engineering, oil and gas and other manufacturing industries. Branches at PCMC, Pune and Satara.",
   url: "https://www.onkarsinages.com",
   linkedin: "https://www.linkedin.com/in/onkar-signages/",
   phoneDisplay: "+91 96896 76416",
@@ -44,8 +44,8 @@ export const DIVISIONS = [
     name: "Industrial Cutting Tools",
     short: "Cutting Tools",
     href: "/cutting-tools",
-    tagline: "Solid carbide, HSS and brazed tooling — authorised distributor for Aayudh Tools.",
-    audience: "Manufacturing · CNC Job Shops · Auto Components",
+    tagline: "Authorised distributor of cutting tools — solid carbide, HSS, brazed and special tooling supplied across industry.",
+    audience: "Oil & Gas · Automotive · General Engineering · CNC Job Shops",
     icon: "tools",
   },
 ] as const;

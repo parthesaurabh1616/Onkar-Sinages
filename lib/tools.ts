@@ -36,10 +36,29 @@ export const AAYUDH = {
   plant: "E 70/15, MIDC Waluj, Chhatrapati Sambhajinagar (Aurangabad) 431136",
 } as const;
 
-/** How we describe our own role. Precise wording matters legally. */
+/**
+ * How we describe our own role. Precise wording matters legally, so keep the
+ * two halves intact: we are a TRADING company and an authorised distributor;
+ * Aayudh Tools is the MANUFACTURER. Neither claim should absorb the other.
+ */
 export const DISTRIBUTOR_ROLE = {
-  short: "Authorised distributor — Aayudh Tools",
-  long: "Onkar AP Signages is an authorised distributor for Aayudh Tools. We hold stock, handle application enquiries, and coordinate special-tool development and reconditioning with the manufacturer.",
+  short: "Authorised distributor of cutting tools",
+  /** One line for tight spaces where the manufacturer must still be named. */
+  withPrincipal: "Authorised distributor of cutting tools — manufactured by Aayudh Tools",
+  long: "Onkar AP Signages is a trading company. Our cutting tools division is an authorised distributor supplying solid carbide, HSS, brazed and special tooling to automotive, general engineering and other manufacturing industries through our branches at PCMC, Pune and Satara. We hold stock, handle application enquiries, and coordinate special-tool development and reconditioning with the manufacturer, Aayudh Tools.",
+} as const;
+
+/**
+ * What the business actually is. Stated plainly because a plant buying tooling
+ * should know it is buying from a trading and distribution company, not from
+ * the works that grinds the tools.
+ */
+export const COMPANY_MODEL = {
+  type: "Trading & distribution company",
+  since: 2019,
+  summary:
+    "A trading company supplying industry across Maharashtra since 2019 — advertising and signage material through Division 01, and industrial cutting tools through Division 02.",
+  reach: "Supplied through our branches at PCMC, Pune and Satara.",
 } as const;
 
 // ============================================================================
@@ -449,27 +468,27 @@ export const TOOL_MATERIALS = [
  */
 export const TOOL_INDUSTRIES = [
   {
-    name: "Oil & Gas",
+    name: "Oil & Gas Industries",
     desc: "Equipment and component manufacturing in corrosion-resistant and high-strength alloys — the duplex, Inconel and titanium work this range is built for.",
     icon: "droplet",
   },
   {
-    name: "Automotive & Auto Components",
+    name: "Automotive & Auto Component Industries",
     desc: "Volume machining where cycle time and cost per component decide the tooling.",
     icon: "vehicle",
   },
   {
-    name: "General Engineering",
+    name: "General Engineering Industries",
     desc: "Job shops and fabricators running mixed batches across materials.",
     icon: "tools",
   },
   {
-    name: "Aerospace",
+    name: "Aerospace Industry",
     desc: "Named in Aayudh's material as a segment served with advanced-material tooling.",
     icon: "spark",
   },
   {
-    name: "Medical",
+    name: "Medical Industry",
     desc: "Named in Aayudh's material as a segment served with advanced-material tooling.",
     icon: "shield",
   },

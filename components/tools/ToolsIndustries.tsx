@@ -20,7 +20,7 @@ export function ToolsIndustries() {
         <SectionHeading
           eyebrow="Applications"
           title="Where this tooling is used"
-          description="Oil and gas, automotive and general engineering are where we supply day to day. Aerospace and medical are named in Aayudh's own material as segments served."
+          description="We supply cutting tools across industry — oil and gas, automotive and auto components, and general engineering are the day-to-day volume, delivered through our branches at PCMC, Pune and Satara. Aerospace and medical are named in Aayudh's own material as segments served."
         />
 
         {/*
