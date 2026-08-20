@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { DIVISIONS } from "@/lib/site";
+import { COMPANY_MODEL, DIVISIONS, SITE } from "@/lib/site";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Media } from "@/components/ui/Media";
 import { Icon } from "@/components/ui/Icon";
@@ -52,10 +52,31 @@ export function Divisions() {
         <SectionHeading
           eyebrow="Two Divisions"
           title="One company, two supply businesses"
-          description="Onkar AP Signages is a trading company. We supply the advertising industry with print and signage material, and now supply manufacturing plants with industrial cutting tools as an authorised distributor."
+          description={COMPANY_MODEL.intro}
         />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+        {/*
+          Company facts alongside the statement — a buyer sizing us up wants the
+          shape of the business before the product cards.
+        */}
+        <dl className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { k: "Company", v: "Trading Company", s: SITE.legalName },
+            { k: "In market", v: `${COMPANY_MODEL.yearsInMarket} Years`, s: `Since ${COMPANY_MODEL.since}` },
+            { k: "Branches", v: "Three", s: COMPANY_MODEL.branches },
+            { k: "Coverage", v: "Maharashtra", s: "Signage material statewide" },
+          ].map((f) => (
+            <div key={f.k} className="bg-secondary p-5">
+              <dt className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+                {f.k}
+              </dt>
+              <dd className="mt-2 font-display text-lg font-bold text-white">{f.v}</dd>
+              <dd className="mt-0.5 text-xs leading-relaxed text-muted">{f.s}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
           {CARDS.map((d, i) => (
             <motion.article
               key={d.id}

@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AAYUDH, COMPANY_MODEL, DISTRIBUTOR_ROLE } from "@/lib/tools";
-import { SITE } from "@/lib/site";
+import { AAYUDH, DISTRIBUTOR_ROLE } from "@/lib/tools";
+import { COMPANY_MODEL, SITE } from "@/lib/site";
 import { Icon } from "@/components/ui/Icon";
 
 /**
