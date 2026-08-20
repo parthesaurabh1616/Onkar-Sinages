@@ -8,6 +8,7 @@ import {
   TOOL_WHY_US,
 } from "@/lib/tools";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Media } from "@/components/ui/Media";
 import { Icon } from "@/components/ui/Icon";
 
 export function ToolsIndustries() {
@@ -39,37 +40,107 @@ export function ToolsIndustries() {
                 transition={{ duration: 0.45, delay: i * 0.06 }}
                 className={
                   lead
-                    ? "rounded-3xl border border-accent/30 bg-accent/[0.07] p-6 sm:col-span-2 lg:col-span-4"
+                    ? "relative overflow-hidden rounded-3xl border border-accent/30 sm:col-span-2 lg:col-span-4"
                     : "rounded-3xl border border-surface-border bg-surface-raised/60 p-6"
                 }
               >
-                <span
-                  className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-highlight ${
-                    lead
-                      ? "border-accent/40 bg-accent/15"
-                      : "border-accent/20 bg-accent/10"
-                  }`}
-                >
-                  <Icon name={ind.icon} className="h-5 w-5" />
-                </span>
-                <h3
-                  className={`mt-4 font-display font-bold text-white ${
-                    lead ? "text-2xl" : "text-lg"
-                  }`}
-                >
-                  {ind.name}
-                </h3>
-                <p
-                  className={`mt-2 text-sm leading-relaxed text-muted ${
-                    lead ? "max-w-3xl" : ""
-                  }`}
-                >
-                  {ind.desc}
-                </p>
+                {lead && (
+                  <>
+                    <Media
+                      src="/images/tools/oil-gas/refinery-twilight.jpg"
+                      alt="Petrochemical refinery lit at twilight, the kind of plant the components this tooling machines end up in."
+                      overlay={false}
+                      className="absolute inset-0"
+                    />
+                    {/* Keeps the copy legible over a busy, high-contrast photo. */}
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 bg-gradient-to-r from-primary via-primary/92 to-primary/55"
+                    />
+                  </>
+                )}
+
+                <div className={lead ? "relative p-7 sm:p-9" : ""}>
+                  <span
+                    className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-highlight ${
+                      lead
+                        ? "border-accent/40 bg-accent/15"
+                        : "border-accent/20 bg-accent/10"
+                    }`}
+                  >
+                    <Icon name={ind.icon} className="h-5 w-5" />
+                  </span>
+                  <h3
+                    className={`mt-4 font-display font-bold text-white ${
+                      lead ? "text-2xl sm:text-3xl" : "text-lg"
+                    }`}
+                  >
+                    {ind.name}
+                  </h3>
+                  <p
+                    className={`mt-2 text-sm leading-relaxed text-muted ${
+                      lead ? "max-w-2xl sm:text-base" : ""
+                    }`}
+                  >
+                    {ind.desc}
+                  </p>
+
+                  {lead && (
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {["Duplex Stainless", "Inconel", "Titanium"].map((m) => (
+                        <li
+                          key={m}
+                          className="rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-highlight"
+                        >
+                          {m}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </motion.div>
             );
           })}
         </div>
+
+        {/*
+          Sector context, not our work. These are illustrative photographs of the
+          industry the tooling serves — labelled as such so nothing reads as a
+          project we executed.
+        */}
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              src: "/images/tools/oil-gas/offshore-platform.jpg",
+              alt: "Offshore oil and gas production platform with a supply vessel alongside.",
+              label: "Upstream · Offshore",
+            },
+            {
+              src: "/images/tools/oil-gas/refinery-waterfront.jpg",
+              alt: "Refinery complex lit at dusk along a waterfront.",
+              label: "Downstream · Refining",
+            },
+            {
+              src: "/images/tools/oil-gas/rig-floor.jpg",
+              alt: "Drilling rig structure and handling equipment seen from above.",
+              label: "Drilling Equipment",
+            },
+          ].map((img) => (
+            <figure
+              key={img.src}
+              className="relative h-40 overflow-hidden rounded-2xl border border-surface-border"
+            >
+              <Media src={img.src} alt={img.alt} className="absolute inset-0" />
+              <figcaption className="absolute inset-x-0 bottom-0 p-4 font-mono text-[10px] uppercase tracking-[0.18em] text-white/85">
+                {img.label}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="mt-3 text-[11px] leading-relaxed text-muted/60">
+          Sector imagery shown for context. These are illustrative photographs of
+          the oil and gas industry, not projects executed by Onkar AP Signages.
+        </p>
 
         {/* --- Materials -------------------------------------------------- */}
         <div className="mt-16 rounded-3xl border border-surface-border bg-surface-raised/40 p-6 sm:p-8">

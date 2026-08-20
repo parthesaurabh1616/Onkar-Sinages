@@ -93,7 +93,7 @@ export function ToolsContact() {
                 <span className="block font-semibold text-white">
                   Download the cutting tools catalogue
                 </span>
-                <span className="block text-xs text-muted">PDF · 12 pages · 2.7 MB</span>
+                <span className="block text-xs text-muted">PDF · 13 pages · 3.6 MB</span>
               </span>
             </a>
 
